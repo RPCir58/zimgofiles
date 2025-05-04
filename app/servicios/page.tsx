@@ -27,7 +27,7 @@ export default function ServiciosPage() {
           <path d="M7 12h.01" />
         </svg>
       ),
-      link: "/games",
+      link: "/ju3gos",
     },
     {
       id: 2,

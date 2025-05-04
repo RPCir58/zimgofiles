@@ -9,9 +9,9 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Inicio", href: "/" },
-    { name: "Juegos", href: "/games" },
     { name: "Servicios", href: "/servicios" },
     { name: "ZimChat", href: "/zimchat" },
+    { name: "Cuenta", href: "/cuenta" },
     { name: "Acerca de", href: "/about" },
   ]
 
