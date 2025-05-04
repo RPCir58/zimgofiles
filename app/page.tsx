@@ -41,7 +41,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Unblocked Web</h3>
             <p className="text-gray-600 mb-4">Accede a cualquier página web rápidamente sin salir de ZIMGo.</p>
-            <Link href="/unblocked-web" className="text-green-500 hover:text-green-600 transition-colors">
+            <Link href="/unbl0cked-w3b" className="text-green-500 hover:text-green-600 transition-colors">
               Acceder ahora →
             </Link>
           </div>

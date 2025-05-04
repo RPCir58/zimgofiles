@@ -28,7 +28,7 @@ export default function Footer() {
             <Link href="/servicios" className="text-gray-600 hover:text-green-500 transition-colors">
               Servicios
             </Link>
-            <Link href="/games" className="text-gray-600 hover:text-green-500 transition-colors">
+            <Link href="/ju3gos" className="text-gray-600 hover:text-green-500 transition-colors">
               Juegos
             </Link>
           </div>
