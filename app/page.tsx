@@ -19,7 +19,7 @@ export default function Home() {
             <path d="M12 2L2 19.7778H22L12 2Z" fill="#00DC82" stroke="#00DC82" />
           </svg>
         </div>
-        <h1 className="text-4xl font-bold mb-6">ZIMGo Webpage</h1>
+        <h1 className="text-4xl font-bold mb-6">~~~~~ ZIMGo ~~~~~</h1>
 
         <div className="w-full max-w-3xl border border-gray-200 rounded-lg p-8 mb-12">
           <div className="flex justify-center mb-4">
