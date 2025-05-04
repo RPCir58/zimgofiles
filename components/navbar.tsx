@@ -11,6 +11,7 @@ export default function Navbar() {
     { name: "Inicio", href: "/" },
     { name: "Juegos", href: "/games" },
     { name: "Servicios", href: "/servicios" },
+    { name: "ZimChat", href: "/zimchat" },
     { name: "Acerca de", href: "/about" },
   ]
 

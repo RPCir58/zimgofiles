@@ -28,7 +28,10 @@ export default function Home() {
             </div>
           </div>
           <h2 className="text-2xl font-semibold mb-4">Juegos</h2>
-          <p className="text-gray-600">Accede al catálogo de juegos de ZIMGo.</p>
+          <p className="text-gray-600 mb-4">Accede al catálogo de juegos de ZIMGo.</p>
+          <Link href="/games" className="text-green-500 hover:text-green-600 transition-colors">
+            Acceder ahora →
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl">

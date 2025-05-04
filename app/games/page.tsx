@@ -27,9 +27,10 @@ export default function GamesPage() {
     },
     {
       id: 4,
-      title: "Game Title 4",
-      description: "A short description of the game and what makes it fun to play.",
-      image: null,
+      title: "Cryzen",
+      description: "El shooter como Fortnite multijugador web con más usuarios activos.",
+      image: "/images/cryzen.jpg",
+      link: "/cryzen",
     },
     {
       id: 5,
