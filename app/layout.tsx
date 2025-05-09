@@ -8,7 +8,7 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "ZIMGo Web",
+  title: "BETA ZIMGo Web",
   description: "Una web creada por los desarrolladores de ZIM.",
   generator: "v0.dev",
 }
