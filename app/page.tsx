@@ -20,7 +20,9 @@ export default function Home() {
           </svg>
         </div>
         <h1 className="text-4xl font-bold mb-6">ZIMGo Webpage</h1>
-
+        <p>PÁGINA BETA DE ZIMGO - FUNCIONES EN DESARROLLO</p>
+        <p>MUCHAS COSAS NO FUNCIONARÁN CORRECTAMENTE</p>
+        <p>VISITA LA WEB ESTABLE AQUÍ {"->"} https://zimgo.vercel.app/</p>
         <div className="w-full max-w-3xl border border-gray-200 rounded-lg p-8 mb-12">
           <div className="flex justify-center mb-4">
             <div className="h-16 w-16 rounded-lg border border-green-200 flex items-center justify-center">
@@ -29,7 +31,7 @@ export default function Home() {
           </div>
           <h2 className="text-2xl font-semibold mb-4">Juegos</h2>
           <p className="text-gray-600 mb-4">Accede al catálogo de juegos de ZIMGo.</p>
-          <Link href="/ju3gos" className="text-green-500 hover:text-green-600 transition-colors">
+          <Link href="/games" className="text-green-500 hover:text-green-600 transition-colors">
             Acceder ahora →
           </Link>
         </div>
@@ -41,7 +43,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Unblocked Web</h3>
             <p className="text-gray-600 mb-4">Accede a cualquier página web rápidamente sin salir de ZIMGo.</p>
-            <Link href="/unbl0cked-w3b" className="text-green-500 hover:text-green-600 transition-colors">
+            <Link href="/unblocked-web" className="text-green-500 hover:text-green-600 transition-colors">
               Acceder ahora →
             </Link>
           </div>
