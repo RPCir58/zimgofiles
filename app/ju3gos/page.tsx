@@ -14,16 +14,17 @@ export default function GamesPage() {
     },
     {
       id: 2,
-      title: "Minecraft Classic Mobile",
-      description: "Juega a Minecraft (no multijugador) desde ZIMGo. Compatible con modo táctil.",
-      image: "/images/classicube.png",
-      link: "/classicube",
+      title: "Geometry Dash",
+      description: "Juega a Geometry Dash Lite desde ZIMGo. Compatible con modo táctil.",
+      image: "/images/geometrydash.png",
+      link: "/geometrydash",
     },
     {
       id: 3,
-      title: "Multiplayer Platformer",
-      description: "Juega a un plataformas multijugador con otros usuarios de ZIMGo.",
-      image: null,
+      title: "Retro",
+      description: "Juega a gran variedad de clásicos Retro desde ZIMGo.",
+      image: "/images/retro.png",
+      link: "/retro"
     },
     {
       id: 4,
