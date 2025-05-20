@@ -16,14 +16,14 @@ export default function GamesPage() {
       id: 2,
       title: "Geometry Dash",
       description: "Juega a Geometry Dash Lite desde ZIMGo. Compatible con modo táctil.",
-      image: "/images/geometrydash.png",
+      image: "/images/geometrydash.jpg",
       link: "/geometrydash",
     },
     {
       id: 3,
       title: "Retro",
       description: "Juega a gran variedad de clásicos Retro desde ZIMGo.",
-      image: "/images/retro.png",
+      image: "/images/retro.jpg",
       link: "/retro"
     },
     {

@@ -16,9 +16,9 @@ export default function UnblockedWebPage() {
 
   const popularSites = [
     { name: "Bad Time Simulator", url: "https://badtimesimulator.io/" },
-    { name: "Onlinemania (Retro)", url: "https://onlinemania.es/" },
-    { name: "Scratch", url: "https://scratch.mit.edu" },
-    { name: "Poki", url: "https://poki.com" },
+    { name: "Google Maps", url: "https://google.com/es/maps/" },
+    { name: "Google Drive", url: "https://drive.google.com/" },
+    { name: "Google Earth", url: "https://earth.google.com/" },
     { name: "Google", url: "https://www.google.com" },
   ]
 
@@ -133,7 +133,7 @@ export default function UnblockedWebPage() {
             <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10">
               <div className="flex flex-col items-center">
                 <div className="w-8 h-8 border-4 border-gray-200 border-t-green-500 rounded-full animate-spin"></div>
-                <p className="mt-2 text-sm text-gray-600">Loading...</p>
+                <p className="mt-2 text-sm text-gray-600">Cargando...</p>
               </div>
             </div>
           )}
@@ -146,7 +146,7 @@ export default function UnblockedWebPage() {
                   <embed src={currentUrl} type="text/html" className="w-full h-full" />
                 </object>
               ) : (
-                <p>No URL loaded</p>
+                <p>No URL cargada</p>
               )}
             </div>
           </div>
@@ -164,7 +164,7 @@ export default function UnblockedWebPage() {
         <h1 className="text-4xl font-bold mb-6">Unblocked Web</h1>
         <p className="text-xl text-gray-600 max-w-2xl mb-8">Accede a webs restringidas sin salir de ZIMGo.</p>
       </div>
-
+      <p className="text-gray-500 text-sm mb-8">Función en desarrollo, muchas webs no funcionan.</p>
       <div className="max-w-4xl mx-auto">
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Visitar Sitio Web</h2>
