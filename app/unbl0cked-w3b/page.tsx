@@ -15,8 +15,8 @@ export default function UnblockedWebPage() {
   const webViewRef = useRef<HTMLDivElement>(null)
 
   const popularSites = [
-    { name: "YouTube", url: "https://www.youtube.com" },
-    { name: "TikTok", url: "https://www.tiktok.com" },
+    { name: "Bad Time Simulator", url: "https://badtimesimulator.io/" },
+    { name: "Onlinemania (Retro)", url: "https://onlinemania.es/" },
     { name: "Scratch", url: "https://scratch.mit.edu" },
     { name: "Poki", url: "https://poki.com" },
     { name: "Google", url: "https://www.google.com" },
@@ -189,7 +189,7 @@ export default function UnblockedWebPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="border border-gray-200 rounded-lg p-6">
-            <h3 className="text-xl font-semibold mb-3">Populares en ZIMGo</h3>
+            <h3 className="text-xl font-semibold mb-3">Sitios de juegos recomendados</h3>
             <ul className="space-y-2">
               {popularSites.map((site) => (
                 <li key={site.name}>
