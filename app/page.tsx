@@ -20,9 +20,6 @@ export default function Home() {
           </svg>
         </div>
         <h1 className="text-4xl font-bold mb-6">ZIMGo Webpage</h1>
-        <p>PÁGINA BETA DE ZIMGO - FUNCIONES EN DESARROLLO</p>
-        <p>MUCHAS COSAS NO FUNCIONARÁN CORRECTAMENTE</p>
-        <p>VISITA LA WEB ESTABLE AQUÍ {"->"} https://zimgo.vercel.app/</p>
         <div className="w-full max-w-3xl border border-gray-200 rounded-lg p-8 mb-12">
           <div className="flex justify-center mb-4">
             <div className="h-16 w-16 rounded-lg border border-green-200 flex items-center justify-center">
