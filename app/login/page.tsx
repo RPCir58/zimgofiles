@@ -8,8 +8,8 @@ import { Lock, User } from "lucide-react"
 
 // Hardcoded credentials
 const validCredentials = [
-  { username: "admin", password: "admin123" },
-  { username: "zimgo", password: "zimgo2024" },
+  { username: "RP_Circulo", password: "Pass19243" },
+  { username: "frsnt", password: "frsnt_41" },
   { username: "user", password: "user123" },
 ]
 
@@ -24,7 +24,7 @@ export default function LoginPage() {
   useEffect(() => {
     const isAuthenticated = localStorage.getItem("isAuthenticated")
     if (isAuthenticated === "true") {
-      router.push("/recursos-privados")
+      router.push("/privada")
     }
   }, [router])
 
@@ -50,7 +50,7 @@ export default function LoginPage() {
 
       // Redirect to private resources
       setTimeout(() => {
-        router.push("/recursos-privados")
+        router.push("/privada")
       }, 500)
     } else {
       setError("Usuario o contraseña incorrectos")
@@ -112,15 +112,18 @@ export default function LoginPage() {
             disabled={loading}
             className="w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50"
           >
-            {loading ? "Iniciando sesión..." : "Iniciar Sesión"}
+            {loading ? "Iniciando sesión..." : "Iniciar sesión"}
           </button>
         </form>
 
         <div className="mt-6 text-center text-sm text-gray-500">
-          <p>Credenciales de prueba:</p>
-          <p>Usuario: admin, Contraseña: admin123</p>
-          <p>Usuario: zimgo, Contraseña: zimgo2024</p>
-          <p>Usuario: user, Contraseña: user123</p>
+          <p>
+            ¿No tienes cuenta? {" "}
+            <a href="/cuenta" className="text-green-500 hover:text-green-600">
+              Regístrate
+            </a>
+            .
+          </p>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ export default function GamesPage() {
       title: "Minecraft",
       description: "Juega a Minecraft 1.5.2 desde ZIMGo. Solo disponible para dispositivos con teclado.",
       image: "/images/minecraft.png",
-      link: "/minecraft",
+      link: "/zimgo-minecraft",
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ export default function GamesPage() {
       title: "Retro",
       description: "Juega a gran variedad de clásicos Retro desde ZIMGo.",
       image: "/images/retro.jpg",
-      link: "/retro"
+      link: "/retro",
     },
     {
       id: 4,
@@ -65,13 +65,20 @@ export default function GamesPage() {
           >
             <div className="aspect-video bg-gray-100 flex items-center justify-center">
               {game.image ? (
-                <Image
-                  src={game.image || "/placeholder.svg"}
-                  alt={game.title}
-                  width={400}
-                  height={225}
-                  className="w-full h-full object-cover"
-                />
+                <div className="relative w-full h-full">
+                  <Image
+                    src={game.image || "/placeholder.svg"}
+                    alt={game.title}
+                    width={400}
+                    height={225}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback to placeholder if image fails to load
+                      const target = e.target as HTMLImageElement
+                      target.src = "/placeholder.svg?height=400&width=600"
+                    }}
+                  />
+                </div>
               ) : (
                 <span className="text-gray-400">Game {game.id} Coming Soon</span>
               )}

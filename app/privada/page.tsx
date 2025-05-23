@@ -39,7 +39,7 @@ export default function RecursosPrivadosPage() {
     )
   }
 
-  const isAdmin = username === "admin"
+  const isAdmin = username === "RP_Circulo"
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -48,7 +48,7 @@ export default function RecursosPrivadosPage() {
           <div>
             <h1 className="text-3xl font-bold">Recursos Privados</h1>
             <p className="text-gray-600 mt-2">
-              Bienvenido, <span className="font-semibold">{username}</span>
+              ¡Hola, <span className="font-semibold">{username}</span>!
             </p>
           </div>
           <button
@@ -56,7 +56,7 @@ export default function RecursosPrivadosPage() {
             className="flex items-center gap-2 bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors"
           >
             <LogOut className="h-4 w-4" />
-            Cerrar Sesión
+            Cerrar sesión
           </button>
         </div>
 
@@ -66,7 +66,7 @@ export default function RecursosPrivadosPage() {
               <Shield className="h-5 w-5" />
               Panel de Administrador
             </div>
-            <p className="text-yellow-600 mb-4">Tienes acceso a funciones administrativas adicionales.</p>
+            <p className="text-yellow-600 mb-4">Tu cuenta tiene permisos de administración.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <button className="bg-white border border-yellow-300 rounded-md p-3 hover:bg-yellow-50 transition-colors text-left">
                 Gestionar usuarios
@@ -78,7 +78,7 @@ export default function RecursosPrivadosPage() {
                 Estadísticas de uso
               </button>
               <button className="bg-white border border-yellow-300 rounded-md p-3 hover:bg-yellow-50 transition-colors text-left">
-                Logs del sistema
+                Send Email
               </button>
             </div>
           </div>
@@ -103,9 +103,9 @@ export default function RecursosPrivadosPage() {
               <div className="p-2 rounded-full bg-green-50 mr-3">
                 <Download className="h-6 w-6 text-green-500" />
               </div>
-              <h3 className="font-semibold text-lg">Descargas Premium</h3>
+              <h3 className="font-semibold text-lg">Descarga ZIM App</h3>
             </div>
-            <p className="text-gray-600 mb-4">Descarga recursos y herramientas premium sin restricciones.</p>
+            <p className="text-gray-600 mb-4">Descarga ZIM App fácilmente desde ZIMGo.</p>
             <button className="text-green-500 font-medium hover:text-green-600 transition-colors">Ver descargas</button>
           </div>
         </div>
@@ -125,8 +125,8 @@ export default function RecursosPrivadosPage() {
             <div className="px-6 py-4 flex justify-between items-center">
               <div>
                 <h4 className="font-medium">Plantillas premium</h4>
-                <p className="text-sm text-gray-500">ZIP - 15 MB</p>
-              </div>
+                <p className="text-sm text-gray-500">ZI 15 MB</p>
+              </div>P -
               <button className="text-green-500 hover:text-green-600">Descargar</button>
             </div>
             <div className="px-6 py-4 flex justify-between items-center">
