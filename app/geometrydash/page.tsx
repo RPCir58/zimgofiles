@@ -15,7 +15,7 @@ export default function GeometryDashPage() {
   }, [])
 
   return (
-    <div className="w-full h-screen overflow-hidden bg-gray-900">
+    <div className="w-full h-[calc(100vh-64px)] overflow-hidden bg-gray-900">
       {isLoading && (
         <div className="absolute inset-0 bg-gray-900 flex items-center justify-center z-10">
           <div className="flex flex-col items-center">

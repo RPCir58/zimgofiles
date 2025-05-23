@@ -16,7 +16,7 @@ export default function ZimChatPage() {
   }, [])
 
   return (
-    <div className="w-full h-screen overflow-hidden relative">
+    <div className="w-full h-[calc(100vh-64px)] overflow-hidden relative">
       {isLoading && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-white z-10">
           <Loader2 className="h-12 w-12 text-green-500 animate-spin mb-4" />
