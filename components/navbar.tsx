@@ -11,7 +11,7 @@ export default function Navbar() {
     { name: "Inicio", href: "/" },
     { name: "Servicios", href: "/servicios" },
     { name: "ZimChat", href: "/zimchat" },
-    { name: "Cuenta", href: "/cuenta" },
+    { name: "Cuenta", href: "/login" },
     { name: "Acerca de", href: "/about" },
   ]
 

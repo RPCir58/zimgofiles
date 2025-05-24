@@ -126,7 +126,7 @@ export default function ZimAppPage() {
               <div className="flex justify-between items-center p-3 bg-gray-50 rounded-md">
                 <div>
                   <h4 className="font-medium">ZIM App Demo 2.0</h4>
-                  <p className="text-sm text-gray-500">Demo v4.0 24/05/2025</p>
+                  <p className="text-sm text-gray-500">Demo v2.0 24/05/2025</p>
                 </div>
                 <div className="flex gap-2">
                   <button className="bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors">
@@ -177,17 +177,67 @@ export default function ZimAppPage() {
             </div>
             <div className="px-6 py-4 flex justify-between items-center">
               <div>
-                <h4 className="font-medium">ZIM Beta</h4>
-                <p className="text-sm text-gray-500">Múltiples formatos - v2.2.0-beta</p>
+                <h4 className="font-medium">ZIM App 2.0</h4>
+                <p className="text-sm text-gray-500">Release v2.0 21/03/2025</p>
               </div>
               <button className="text-green-500 hover:text-green-600 font-medium">
                 <Download className="h-4 w-4 inline mr-2" />
-                Ver versiones
+                <a href="https://download1324.mediafire.com/ngg4xrdxj7pgFSoUPu1eru71w0wf_bZaoNR0rfMXa0kXIYPbgvT1voOd61EfKtPNYfGehVtAxWMdoTSKiiHL9tjGNcTNurw4P-DDuQeB9w8Su-1o65UiYPoOmSGgTY75VXD1-WmWRR1irBk8ntVFz-VZ7c_gcU01dxNfAfi5guXuJ8qg/0mjvwzh8965sbvi/ZimApp-Installer-2.0.zip" className="">
+              Descargar
+            </a>
               </button>
             </div>
             <div className="px-6 py-4 flex justify-between items-center">
               <div>
-                <h4 className="font-medium">Source code</h4>
+                <h4 className="font-medium">ZIM App 1.5</h4>
+                <p className="text-sm text-gray-500">Release v1.5 21/02/2025</p>
+              </div>
+              <button className="text-green-500 hover:text-green-600 font-medium">
+                <Download className="h-4 w-4 inline mr-2" />
+                <a href="https://download1350.mediafire.com/sw5ghdtye8jg49XZ_ac1uZ5GWghBqiMudQdsfDM2Oj7dzepso4rhIRfd4VamildtVk9upbrjrWCaX7RqPKe6-hcput_o2leIqc__z6m5qu8l9MiJx8_nJvMrgthcDAImWLBmGYEC8a80o6HX9x-GUlAsTYMyHHymsdZbkCtaK5iORsjL/czytf4blcqbr27b/ZimApp-Installer-1.5.zip" className="">
+              Descargar
+            </a>
+              </button>
+            </div>
+            <div className="px-6 py-4 flex justify-between items-center">
+              <div>
+                <h4 className="font-medium">ZIM App 1.2</h4>
+                <p className="text-sm text-gray-500">Release v1.2 09/01/2025</p>
+              </div>
+              <button className="text-green-500 hover:text-green-600 font-medium">
+                <Download className="h-4 w-4 inline mr-2" />
+                <a href="https://download1347.mediafire.com/2k2yo34p93egLt58Te5MrIlYYsaPfjXvBnbdOW7q0jKl66tT9Y_Q2bG0AsF6VaR_YDtPeks6ELbTDoVPnpfWdivekNmgFipf65ngEGTgRDiAVM2ks7qeVRvFIOGkIffAKLXHua94-dduIbStC5soMHT_bLndLkFqjKjw-4_WHU9tADeV/tj87xdx5wz4e5hm/ZimApp-Installer-1.2.zip" className="">
+              Descargar
+            </a>
+              </button>
+            </div>
+            <div className="px-6 py-4 flex justify-between items-center">
+              <div>
+                <h4 className="font-medium">ZIM App 1.0</h4>
+                <p className="text-sm text-gray-500">Release v1.0 14/12/2024</p>
+              </div>
+              <button className="text-green-500 hover:text-green-600 font-medium">
+                <Download className="h-4 w-4 inline mr-2" />
+                <a href="https://download1591.mediafire.com/80u2akwzs60gToBNTB3Zs7C_qevBJOxlEREDsmI6V7ig3xUqyXVSEGNt4IKlH4Q7CjZDvb2v2GfUpegZd-WXgJvxuroGeu5gQvQtKXnBvYWRiRI9nkYU9x-02ZHAzmTX1wEln3WVZ2EpvIV0JdyRRzBb-bBWV7kX9x8f2zZuxRK1BEH7/c19jhvnfxaltgs0/ZimApp-Installer-1.0.zip" className="">
+              Descargar
+            </a>
+              </button>
+            </div>
+            <div className="px-6 py-4 flex justify-between items-center">
+              <div>
+                <h4 className="font-medium">ZIM App Demo 1.0</h4>
+                <p className="text-sm text-gray-500">Demo v1.0 25/03/2025</p>
+              </div>
+              <button className="text-green-500 hover:text-green-600 font-medium">
+                <Download className="h-4 w-4 inline mr-2" />
+                <a href="https://download1532.mediafire.com/7r3yucwytvtgCTB-TkxSuvMfp95zsz49L0aDdOioUssQwqK8TErXit4fJ4e74SMHxfA0OqB5VRc3ChmsalF0rhQBLKIV4qC52mEOu4WwV7T1TtPMq-G6xxG42qu5k6ThTPLmi8Tvv9TaYE7vOJFgsYGCoyCXOT1HtU4TGj7Ak_snSFdq/jgrdwit7whkdckq/ZimApp-Installer-Demo.zip" className="">
+              Descargar
+            </a>
+              </button>
+            </div>
+            <div className="px-6 py-4 flex justify-between items-center">
+              <div>
+                <h4 className="font-medium">Source Code</h4>
                 <p className="text-sm text-gray-500">GitHub - Para desarrolladores</p>
               </div>
               <button className="text-green-500 hover:text-green-600 font-medium">Ver en GitHub</button>
@@ -200,22 +250,12 @@ export default function ZimAppPage() {
           <h3 className="font-semibold text-blue-900 mb-3">Instrucciones de Instalación</h3>
           <div className="text-blue-800 text-sm space-y-2">
             <p>
-              <strong>Android:</strong> Habilita "Fuentes desconocidas" en Configuración → Seguridad antes de instalar
-              el APK.
+              <strong>iPad:</strong> Exporta el archivo ZIP a la aplicación de Archivos del
+              sistema. Púlsalo y accede a tu nueva carpeta llamada "ZimAppFiles". Abre el archivo
+              .shortcut con la aplicación de Atajos y pulsa "Añadir atajo" para importarlo.
             </p>
             <p>
-              <strong>iOS:</strong> Requiere jailbreak o instalación mediante AltStore/Sideloadly.
-            </p>
-            <p>
-              <strong>Windows:</strong> Ejecuta como administrador si es necesario.
-            </p>
-            <p>
-              <strong>macOS:</strong> Permite aplicaciones de desarrolladores no identificados en Preferencias del
-              Sistema.
-            </p>
-            <p>
-              <strong>Linux:</strong> Haz el archivo AppImage ejecutable:{" "}
-              <code className="bg-blue-100 px-1 rounded">chmod +x ZIM.AppImage</code>
+              <strong>Aplicación solo disponible para dispositivos Apple o con Apple Shortcuts instalado.</strong>
             </p>
           </div>
         </div>
