@@ -106,7 +106,9 @@ export default function RecursosPrivadosPage() {
               <h3 className="font-semibold text-lg">Descarga ZIM App</h3>
             </div>
             <p className="text-gray-600 mb-4">Descarga ZIM App fácilmente desde ZIMGo.</p>
-            <button className="text-green-500 font-medium hover:text-green-600 transition-colors">Ver descargas</button>
+            <button className="text-green-500 font-medium hover:text-green-600 transition-colors"><a href="/zimapp" className="">
+              Ver descargas
+            </a></button>
           </div>
         </div>
 

@@ -10,7 +10,7 @@ export default function GamesPage() {
       title: "Minecraft",
       description: "Juega a Minecraft 1.5.2 desde ZIMGo. Solo disponible para dispositivos con teclado.",
       image: "/images/minecraft.png",
-      link: "/zimgo-minecraft",
+      link: "/minecraft",
     },
     {
       id: 2,

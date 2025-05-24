@@ -125,13 +125,15 @@ export default function ZimAppPage() {
 
               <div className="flex justify-between items-center p-3 bg-gray-50 rounded-md">
                 <div>
-                  <h4 className="font-medium">ZIM para macOS</h4>
-                  <p className="text-sm text-gray-500">DMG - 135.2 MB - v2.1.0</p>
+                  <h4 className="font-medium">ZIM App Demo 2.0</h4>
+                  <p className="text-sm text-gray-500">Demo v4.0 24/05/2025</p>
                 </div>
                 <div className="flex gap-2">
                   <button className="bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors">
                     <Download className="h-4 w-4 inline mr-2" />
-                    Descargar
+                    <a href="https://download1655.mediafire.com/se3umgry76oggPRh5ubvllOxoHRXJTnjsKXn6hxr_PJBIVvMkDIbYOKSUBMQShzxvNPkuiC7A1IP0F9Z1Q-gL15RWFiNTrTT3-JIB7UaulykDcz1y1HndeVw2K1jmca3EWbpcj-PNkFYA5mkSob6Xz7BSWuthNzYfBGkOL9YEd2g0G4e/rmlr6tm2b8uk0b0/ZimAppDemo-Installer-4.0.zip" className="">
+              Descarga directa
+            </a>
                   </button>
                   <button className="bg-gray-500 text-white px-3 py-2 rounded-md hover:bg-gray-600 transition-colors text-sm">
                     QR para iPad
@@ -141,16 +143,13 @@ export default function ZimAppPage() {
 
               <div className="flex justify-between items-center p-3 bg-gray-50 rounded-md">
                 <div>
-                  <h4 className="font-medium">ZIM para Linux</h4>
-                  <p className="text-sm text-gray-500">AppImage - 142.1 MB - v2.1.0</p>
+                  <h4 className="font-medium">Early Access</h4>
+                  <p className="text-sm text-gray-500">Ninguna versión disponible</p>
                 </div>
                 <div className="flex gap-2">
                   <button className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition-colors">
                     <Download className="h-4 w-4 inline mr-2" />
-                    Descargar
-                  </button>
-                  <button className="bg-gray-500 text-white px-3 py-2 rounded-md hover:bg-gray-600 transition-colors text-sm">
-                    QR para iPad
+                    No disponible
                   </button>
                 </div>
               </div>
@@ -166,12 +165,14 @@ export default function ZimAppPage() {
           <div className="divide-y divide-gray-200">
             <div className="px-6 py-4 flex justify-between items-center">
               <div>
-                <h4 className="font-medium">ZIM Portable</h4>
-                <p className="text-sm text-gray-500">ZIP - 95.3 MB - No requiere instalación</p>
+                <h4 className="font-medium">ZIM App 2.1</h4>
+                <p className="text-sm text-gray-500">Update v2.1 25/03/2025</p>
               </div>
               <button className="text-green-500 hover:text-green-600 font-medium">
                 <Download className="h-4 w-4 inline mr-2" />
-                Descargar
+                <a href="https://download944.mediafire.com/q85jjmyhgizgS84iNvZ5XyMF6-szAZVb5OhPfvGhSq_fkffkFPmg_8XB0mqPyR8BH8L0bXXM1gRf6DhHTmoyI_cswLYZ7rWDsdFcazoTKbx_w9Vb_3y7kSb1y_P4_yL3O32WIN3KVK1Gdz9xa174T8VzWnWBBkAfNHk2N57w91YV8w7C/09whsma9akwpvkd/ZimApp-Installer-2.1.zip" className="">
+              Descargar
+            </a>
               </button>
             </div>
             <div className="px-6 py-4 flex justify-between items-center">
@@ -186,7 +187,7 @@ export default function ZimAppPage() {
             </div>
             <div className="px-6 py-4 flex justify-between items-center">
               <div>
-                <h4 className="font-medium">Código fuente</h4>
+                <h4 className="font-medium">Source code</h4>
                 <p className="text-sm text-gray-500">GitHub - Para desarrolladores</p>
               </div>
               <button className="text-green-500 hover:text-green-600 font-medium">Ver en GitHub</button>
