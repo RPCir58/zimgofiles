@@ -65,17 +65,13 @@ export default function GamesPage() {
           >
             <div className="aspect-video bg-gray-100 flex items-center justify-center">
               {game.image ? (
-                <div className="relative w-full h-full">
-                  <Image
-                    src={game.image || "/placeholder.svg"}
-                    alt={game.title}
-                    width={400}
-                    height={225}
-                    className="w-full h-full object-cover"
-                    placeholder="blur"
-                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
-                  />
-                </div>
+                <Image
+                  src={game.image || "/placeholder.svg"}
+                  alt={game.title}
+                  width={400}
+                  height={225}
+                  className="w-full h-full object-cover"
+                />
               ) : (
                 <span className="text-gray-400">Game {game.id} Coming Soon</span>
               )}

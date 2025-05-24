@@ -26,13 +26,13 @@ export default function MinecraftPage() {
       )}
 
       <object
-        data="https://d1tm91r4ytbt54.cloudfront.net/2779cbcb-a02f-48a3-9e2e-95a8d123d165/1685483461665/web/index.html"
+        data="https://eaglercraft.com/mc/1.8.8/?userscript=flameddogo99-eaglermobile.js"
         type="text/html"
         className="w-full h-full"
         title="Minecraft"
       >
         <embed
-          src="https://d1tm91r4ytbt54.cloudfront.net/2779cbcb-a02f-48a3-9e2e-95a8d123d165/1685483461665/web/index.html"
+          src="https://eaglercraft.com/mc/1.8.8/?userscript=flameddogo99-eaglermobile.js"
           type="text/html"
           className="w-full h-full"
           title="Minecraft"
