@@ -118,7 +118,9 @@ export default function ZimAppPage() {
             
                   </button>
                   <button className="bg-gray-500 text-white px-3 py-2 rounded-md hover:bg-gray-600 transition-colors text-sm">
-                    QR para iPad
+                    <a href="https://cdn.discordapp.com/attachments/1074010004266438657/1375851509446737950/zimapp-3.0-qr.png?ex=68333111&is=6831df91&hm=01ac0a46a7472403becb04dfd2f0a9caf5c04ee8f00f18ba325a053956ba7824&" className="">
+              QR para iPad
+            </a>
                   </button>
                 </div>
               </div>
