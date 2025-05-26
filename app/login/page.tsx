@@ -12,6 +12,7 @@ const validCredentials = [
   { username: "frsnt", password: "frsnt_41" },
   { username: "RoRo", password: "RodrigoHerrero583" },
   { username: "palmerapalmero", password: "Pepinos47" },
+  { username: "mayonesa", password: "(2Sopa_De_Cebolla2)" },
 ]
 
 export default function LoginPage() {
