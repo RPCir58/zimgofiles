@@ -11,6 +11,7 @@ const validCredentials = [
   { username: "RP_Circulo", password: "Pass19243" },
   { username: "frsnt", password: "frsnt_41" },
   { username: "RoRo", password: "RodrigoHerrero583" },
+  { username: "palmerapalmero", password: "Pepinos47" },
 ]
 
 export default function LoginPage() {
