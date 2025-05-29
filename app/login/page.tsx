@@ -14,6 +14,7 @@ const validCredentials = [
   { username: "palmerapalmero", password: "Pepinos47" },
   { username: "mayonesa", password: "(2Sopa_De_Cebolla2)" },
   { username: "Mouzo_Maristas", password: "MouzoViq" },
+  { username: "MEMEWORLD", password: "perropianoarbol." },
 ]
 
 export default function LoginPage() {
