@@ -20,6 +20,16 @@ export default function Home() {
           </svg>
         </div>
         <h1 className="text-4xl font-bold mb-6">ZIMGo Webpage</h1>
+          <p className="mb-4">
+            Únete al canal de{" "}
+            <a
+              href="https://whatsapp.com/channel/0029VbB4Qr1J93wNd5Ni9Q34"
+              className="text-green-500 hover:text-green-600"
+            >
+              WhatsApp
+            </a>{" "}
+            y recibe todas las novedades
+          </p>
         <div className="w-full max-w-3xl border border-gray-200 rounded-lg p-8 mb-12">
           <div className="flex justify-center mb-4">
             <div className="h-16 w-16 rounded-lg border border-green-200 flex items-center justify-center">
