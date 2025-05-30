@@ -3,6 +3,8 @@ import Link from "next/link"
 
 export default function Home() {
   return (
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475016885014082"
+     crossorigin="anonymous"></script>
     <div className="container mx-auto px-4 py-12">
       <div className="flex flex-col items-center justify-center text-center mb-12">
         <div className="mb-4">
