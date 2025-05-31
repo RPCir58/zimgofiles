@@ -20,22 +20,22 @@ export default function MinecraftPage() {
         <div className="absolute inset-0 bg-gray-900 flex items-center justify-center z-10">
           <div className="flex flex-col items-center">
             <div className="w-12 h-12 border-4 border-green-200 border-t-green-500 rounded-full animate-spin mb-4"></div>
-            <p className="text-white text-lg">Cargando Agar.io...</p>
+            <p className="text-white text-lg">Cargando Subway Surfers...</p>
           </div>
         </div>
       )}
 
       <object
-        data="https://emupedia.net/emupedia-game-agar.io/"
+        data="https://www.minijuegos.com/embed/subway-surfer-world-tour-zurich"
         type="text/html"
         className="w-full h-full"
-        title="Agar.io"
+        title="Subway Surfers"
       >
         <embed
-          src="https://emupedia.net/emupedia-game-agar.io/"
+          src="https://www.minijuegos.com/embed/subway-surfer-world-tour-zurich"
           type="text/html"
           className="w-full h-full"
-          title="Agar.io"
+          title="Subway Surfers"
         />
       </object>
     </div>

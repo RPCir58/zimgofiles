@@ -35,9 +35,10 @@ export default function GamesPage() {
     },
     {
       id: 5,
-      title: "Game Title 5",
-      description: "A short description of the game and what makes it fun to play.",
-      image: null,
+      title: "Subway Surfers",
+      description: "Juega a Subway Surfers desde ZIMGo.",
+      image: "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2017/03/subway-surfers.jpg?tf=3840x",
+      link: "/subway-surfers"
     },
     {
       id: 6,
@@ -71,6 +72,7 @@ export default function GamesPage() {
                   width={400}
                   height={225}
                   className="w-full h-full object-cover"
+                  unoptimized
                 />
               ) : (
                 <span className="text-gray-400">Game {game.id} Coming Soon</span>
