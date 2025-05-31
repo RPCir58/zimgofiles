@@ -1,40 +1,23 @@
-"use client"
-
-import { useState, useEffect } from "react"
-import { Loader2 } from "lucide-react"
-
-export default function ZimChatPage() {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    // Set a timeout to hide the loading screen after a few seconds
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 3000)
-
-    return () => clearTimeout(timer)
-  }, [])
-
+export default function AboutPage() {
   return (
-    <div className="w-full h-[calc(100vh-64px)] overflow-hidden relative">
-      {isLoading && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-white z-10">
-          <Loader2 className="h-12 w-12 text-green-500 animate-spin mb-4" />
-          <p className="text-lg text-gray-700">Cargando ZimChat...</p>
-        </div>
-      )}
+    <div className="container mx-auto px-4 py-12">
+      <div className="flex flex-col items-center justify-center text-center mb-12">
+        <h1 className="text-4xl font-bold mb-6">ZimChat Servers</h1>
+        <p className="text-xl text-gray-600 max-w-2xl mb-8">Elige un servidor de chat en línea para comenzar.</p>
+      </div>
 
-      <object
-        data="https://chat.chateagratis.net/#nick=ZIMGo_User&channel=#zimchat-0"
-        type="text/html"
-        className="w-full h-full"
-      >
-        <embed
-          src="https://chat.chateagratis.net/#nick=ZIMGo_User&channel=#zimchat-0"
-          type="text/html"
-          className="w-full h-full"
-        />
-      </object>
+      <div className="max-w-4xl mx-auto prose">
+        <h2>
+          <a href="/zimchat/1" className="text-green-500 hover:text-green-600">
+            Servidor 1 (104.26.7.56)
+          </a>
+        </h2>
+        <h2>
+          <a href="/zimchat/2" className="text-green-500 hover:text-green-600">
+            Servidor 2 (172.67.207.97)
+          </a>
+        </h2>
+      </div>
     </div>
   )
 }
