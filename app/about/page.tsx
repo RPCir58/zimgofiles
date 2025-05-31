@@ -20,7 +20,7 @@ export default function AboutPage() {
 
         <h2>Nuestro objetivo</h2>
         <p>
-          Queremos que aquellas personas que buscan alguna manera de entretenerse en clase, sacarle provecho al iPad del colegio o usarlo libremente de la manera más fácil y sencilla posible. Por eso en nuestra web ofrecemos juegos, funciones útlies, una proxy para entrar a cualquier web y mucho más.
+          Queremos que aquellas personas que buscan alguna manera de entretenerse en clase, sacarle provecho al iPad del colegio o usarlo libremente de la manera más fácil y sencilla posible puedan hacerlo. Por eso en nuestra web ofrecemos juegos, funciones útlies, una proxy para entrar a cualquier web y mucho más.
         </p>
 
         <h2>¡Contáctanos!</h2>
@@ -30,7 +30,7 @@ export default function AboutPage() {
               alguien.raro.muy.extrano@gmail.com
             </a>
             .
-            ¡Gracias por hacer que ZIM sea posible!
+            ¡Gracias por hacer que ZIMGo sea posible!
           </p>
 
         <h2>Disclaimer</h2>

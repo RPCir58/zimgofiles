@@ -10,9 +10,9 @@ export default function Navbar() {
   const navItems = [
     { name: "Inicio", href: "/" },
     { name: "Servicios", href: "/servicios" },
-    { name: "ZimChat", href: "/zimchat" },
     { name: "Cuenta", href: "/login" },
     { name: "Acerca de", href: "/about" },
+    { name: "❤ Ko-fi", href: "https://ko-fi.com/rp_circulo" },
   ]
 
   return (

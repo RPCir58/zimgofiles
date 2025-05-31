@@ -8,7 +8,7 @@ export default function GamesPage() {
     {
       id: 1,
       title: "Minecraft",
-      description: "Juega a Minecraft 1.5.2 desde ZIMGo. Solo disponible para dispositivos con teclado.",
+      description: "Juega a Minecraft 1.8.8 desde ZIMGo.",
       image: "/images/minecraft.png",
       link: "/minecraft",
     },
@@ -23,7 +23,7 @@ export default function GamesPage() {
       id: 3,
       title: "Retro",
       description: "Juega a gran variedad de clásicos Retro desde ZIMGo.",
-      image: "/images/retro.jpg",
+      image: "https://png.pngtree.com/background/20230716/original/pngtree-d-rendering-of-retro-game-landscape-with-neon-lights-and-mountain-picture-image_4237973.jpg",
       link: "/retro",
     },
     {
@@ -42,9 +42,10 @@ export default function GamesPage() {
     },
     {
       id: 6,
-      title: "Game Title 6",
-      description: "A short description of the game and what makes it fun to play.",
-      image: null,
+      title: "Brawl Stars",
+      description: "Juega a un fan-made de Brawl Stars desde ZIMGo.",
+      image: "https://www.viaxesports.com/wp-content/uploads/2019/08/brawlstarsagosto.jpg",
+      link: "/brawl-stars"
     },
   ]
 

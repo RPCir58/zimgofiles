@@ -20,22 +20,22 @@ export default function MinecraftPage() {
         <div className="absolute inset-0 bg-gray-900 flex items-center justify-center z-10">
           <div className="flex flex-col items-center">
             <div className="w-12 h-12 border-4 border-green-200 border-t-green-500 rounded-full animate-spin mb-4"></div>
-            <p className="text-white text-lg">Cargando Super Mario 64...</p>
+            <p className="text-white text-lg">Cargando Brawl Stars...</p>
           </div>
         </div>
       )}
 
       <object
-        data="https://www.minijuegos.com/embed/super-mario-64"
+        data="https://www.jopi.com/embed.php?game=starr-drops"
         type="text/html"
         className="w-full h-full"
-        title="Super Mario 64"
+        title="Brawl Stars"
       >
         <embed
-          src="https://www.minijuegos.com/embed/super-mario-64"
+          src="https://www.jopi.com/embed.php?game=starr-drops"
           type="text/html"
           className="w-full h-full"
-          title="Super Mario 64"
+          title="Brawl Stars"
         />
       </object>
     </div>
