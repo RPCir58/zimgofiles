@@ -12,7 +12,7 @@ export default function Navbar() {
     { name: "Servicios", href: "/servicios" },
     { name: "Cuenta", href: "/login" },
     { name: "Acerca de", href: "/about" },
-    { name: "❤ Ko-fi", href: "https://ko-fi.com/rp_circulo" },
+    { name: "❤ Ko-fi", href: "/ko-fi" },
   ]
 
   return (
