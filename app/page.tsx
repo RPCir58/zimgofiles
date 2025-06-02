@@ -30,6 +30,17 @@ export default function Home() {
             </a>{" "}
             y recibe todas las novedades
           </p>
+        <p>
+           💚 Nuevo dominio {"->"} <a
+              href="https://zimgoforever.vercel.app/"
+              className="text-green-500 hover:text-green-600"
+            >
+              https://zimgoforever.vercel.app/
+            </a>
+        </p>
+        <p className="mb-4">
+            {" "}
+        </p>
         <div className="w-full max-w-3xl border border-gray-200 rounded-lg p-8 mb-12">
           <div className="flex justify-center mb-4">
             <div className="h-16 w-16 rounded-lg border border-green-200 flex items-center justify-center">
