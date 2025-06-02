@@ -18,7 +18,9 @@ export default function Footer() {
             >
               <path d="M12 2L2 19.7778H22L12 2Z" fill="#00DC82" stroke="#00DC82" />
             </svg>
-            <span className="font-semibold">ZIMGo</span>
+            <a href="/" className="font-semibold">
+              ZIMGo
+            </a>
           </div>
 
           <div className="flex space-x-6">
