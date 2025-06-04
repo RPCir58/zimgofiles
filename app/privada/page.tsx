@@ -90,11 +90,13 @@ export default function RecursosPrivadosPage() {
               <div className="p-2 rounded-full bg-green-50 mr-3">
                 <FileText className="h-6 w-6 text-green-500" />
               </div>
-              <h3 className="font-semibold text-lg">Documentos Exclusivos</h3>
+              <h3 className="font-semibold text-lg">Emulador de Windows 11</h3>
             </div>
-            <p className="text-gray-600 mb-4">Accede a documentos y guías exclusivas para usuarios registrados.</p>
+            <p className="text-gray-600 mb-4">Controla un ordenador de Windows 11 durante 20 minutos desde ZIMGo.</p>
             <button className="text-green-500 font-medium hover:text-green-600 transition-colors">
-              Ver documentos
+              <a href="/windowsremote" className="">
+              Usar Windows 11 ahora
+            </a>
             </button>
           </div>
 

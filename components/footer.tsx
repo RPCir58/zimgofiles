@@ -33,6 +33,9 @@ export default function Footer() {
             <Link href="/ju3gos" className="text-gray-600 hover:text-green-500 transition-colors">
               Juegos
             </Link>
+            <Link href="/zimtube" className="text-gray-600 hover:text-green-500 transition-colors">
+              ZimTube
+            </Link>
           </div>
         </div>
 
