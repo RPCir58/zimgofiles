@@ -144,14 +144,6 @@ export default function ZimMusicPage() {
     localStorage.removeItem("zimmusic_recent_searches")
   }
 
-  const closePlayer = () => {
-    setShowPlayer(false)
-    setPlayerState((prev) => ({
-      ...prev,
-      isPlaying: false,
-    }))
-  }
-
   if (showPlayer && playerState.currentSong) {
     return (
       <div className="w-full h-[calc(100vh-64px)] bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex flex-col">
@@ -194,10 +186,7 @@ export default function ZimMusicPage() {
               step="0.1"
               value={playerState.volume}
               onChange={(e) => setPlayerState((prev) => ({ ...prev, volume: Number.parseFloat(e.target.value) }))}
-              className="w-32 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer slider"
-              style={{
-                background: `linear-gradient(to right, #8b5cf6 0%, #8b5cf6 ${playerState.volume * 100}%, #4b5563 ${playerState.volume * 100}%, #4b5563 100%)`,
-              }}
+              className="w-32 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer"
             />
             <span className="text-sm w-8">{Math.round(playerState.volume * 100)}</span>
           </div>
@@ -244,7 +233,7 @@ export default function ZimMusicPage() {
         <div className="absolute -top-full -left-full w-1 h-1 overflow-hidden">
           <iframe
             ref={iframeRef}
-            src={`https://www.youtube.com/embed/${playerState.currentSong.id}?autoplay=${playerState.isPlaying ? 1 : 0}&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&origin=${typeof window !== "undefined" ? window.location.origin : ""}`}
+            src={`https://www.youtube.com/embed/${playerState.currentSong.id}?autoplay=${playerState.isPlaying ? 1 : 0}&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1`}
             title={playerState.currentSong.title}
             className="w-full h-full"
             frameBorder="0"
@@ -252,28 +241,6 @@ export default function ZimMusicPage() {
             allowFullScreen
           />
         </div>
-
-        {/* Custom Styles for Volume Slider */}
-        <style jsx>{`
-          .slider::-webkit-slider-thumb {
-            appearance: none;
-            height: 16px;
-            width: 16px;
-            border-radius: 50%;
-            background: #8b5cf6;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-          }
-          .slider::-moz-range-thumb {
-            height: 16px;
-            width: 16px;
-            border-radius: 50%;
-            background: #8b5cf6;
-            cursor: pointer;
-            border: none;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-          }
-        `}</style>
       </div>
     )
   }
