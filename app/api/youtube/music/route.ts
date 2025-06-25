@@ -11,7 +11,15 @@ export async function GET(request: NextRequest) {
 
   try {
     const API_KEY = "AIzaSyCP4A8UIcZiqSlSkZvdLTvWyJvk-dgT9nk"
-    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&videoCategoryId=10&q=${encodeURIComponent(query + " music")}&maxResults=${maxResults}&key=${API_KEY}`
+    const musicQuery = query + " music"
+    const encodedQuery = encodeURIComponent(musicQuery)
+    const searchUrl =
+      "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&videoCategoryId=10&q=" +
+      encodedQuery +
+      "&maxResults=" +
+      maxResults +
+      "&key=" +
+      API_KEY
 
     const response = await fetch(searchUrl, {
       headers: {
@@ -27,18 +35,24 @@ export async function GET(request: NextRequest) {
 
     const data = await response.json()
 
-    const songs =
-      data.items?.map((item: any) => ({
-        id: item.id.videoId,
-        title: cleanMusicTitle(item.snippet.title),
-        artist: extractArtist(item.snippet.title, item.snippet.channelTitle),
-        thumbnail: item.snippet.thumbnails.medium.url,
-        channel: item.snippet.channelTitle,
-        publishedAt: formatDate(item.snippet.publishedAt),
-        description: item.snippet.description,
-      })) || []
+    const songs = data.items
+      ? data.items.map((item: any) => {
+          return {
+            id: item.id.videoId,
+            title: cleanMusicTitle(item.snippet.title),
+            artist: extractArtist(item.snippet.title, item.snippet.channelTitle),
+            thumbnail: item.snippet.thumbnails.medium.url,
+            channel: item.snippet.channelTitle,
+            publishedAt: formatDate(item.snippet.publishedAt),
+            description: item.snippet.description,
+          }
+        })
+      : []
 
-    return NextResponse.json({ songs, total: data.pageInfo?.totalResults || 0 })
+    return NextResponse.json({
+      songs: songs,
+      total: data.pageInfo ? data.pageInfo.totalResults : 0,
+    })
   } catch (error) {
     console.error("YouTube Music API error:", error)
     const mockData = generateMockMusicResults(query)
@@ -91,11 +105,12 @@ function extractArtist(title: string, channelTitle: string): string {
     return colonSplit[0].trim()
   }
 
-  return channelTitle
-    .replace(/VEVO$/gi, "")
-    .replace(/Official$/gi, "")
-    .replace(/Music$/gi, "")
-    .trim()
+  let cleanChannel = channelTitle
+  cleanChannel = cleanChannel.replace(/VEVO$/gi, "")
+  cleanChannel = cleanChannel.replace(/Official$/gi, "")
+  cleanChannel = cleanChannel.replace(/Music$/gi, "")
+
+  return cleanChannel.trim()
 }
 
 function formatDate(dateString: string): string {
@@ -105,10 +120,10 @@ function formatDate(dateString: string): string {
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
 
   if (diffDays === 1) return "hace 1 día"
-  if (diffDays < 7) return `hace ${diffDays} días`
-  if (diffDays < 30) return `hace ${Math.floor(diffDays / 7)} semanas`
-  if (diffDays < 365) return `hace ${Math.floor(diffDays / 30)} meses`
-  return `hace ${Math.floor(diffDays / 365)} años`
+  if (diffDays < 7) return "hace " + diffDays + " días"
+  if (diffDays < 30) return "hace " + Math.floor(diffDays / 7) + " semanas"
+  if (diffDays < 365) return "hace " + Math.floor(diffDays / 30) + " meses"
+  return "hace " + Math.floor(diffDays / 365) + " años"
 }
 
 function generateMockMusicResults(query: string) {
@@ -151,10 +166,10 @@ function generateMockMusicResults(query: string) {
     },
   ]
 
-  const filteredSongs = mockSongs.filter((song) => {
-    const queryLower = query.toLowerCase()
-    return song.title.toLowerCase().includes(queryLower) || song.artist.toLowerCase().includes(queryLower)
-  })
+  const queryLower = query.toLowerCase()
+  const filteredSongs = mockSongs.filter(
+    (song) => song.title.toLowerCase().includes(queryLower) || song.artist.toLowerCase().includes(queryLower),
+  )
 
   return {
     songs: filteredSongs.length > 0 ? filteredSongs : mockSongs.slice(0, 4),

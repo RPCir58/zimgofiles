@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect, useRef } from "react"
 import { Search, Play, Pause, SkipBack, SkipForward, Volume2, Heart, Shuffle, Repeat, Music, X } from "lucide-react"
 
@@ -71,7 +70,8 @@ export default function ZimMusicPage() {
     localStorage.setItem("zimmusic_recent_searches", JSON.stringify(newRecentSearches))
 
     try {
-      const response = await fetch(`/api/youtube/music?q=${encodeURIComponent(query)}&maxResults=20`)
+      const encodedQuery = encodeURIComponent(query)
+      const response = await fetch("/api/youtube/music?q=" + encodedQuery + "&maxResults=20")
       const data = await response.json()
 
       if (data.songs) {
@@ -141,8 +141,19 @@ export default function ZimMusicPage() {
     localStorage.removeItem("zimmusic_recent_searches")
   }
 
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newVolume = Number.parseFloat(e.target.value)
+    setPlayerState((prev) => ({ ...prev, volume: newVolume }))
+  }
+
   if (showPlayer && playerState.currentSong) {
-    const embedUrl = `https://www.youtube.com/embed/${playerState.currentSong.id}?autoplay=${playerState.isPlaying ? 1 : 0}&controls=0&showinfo=0&rel=0&modestbranding=1`
+    const autoplayValue = playerState.isPlaying ? 1 : 0
+    const embedUrl =
+      "https://www.youtube.com/embed/" +
+      playerState.currentSong.id +
+      "?autoplay=" +
+      autoplayValue +
+      "&controls=0&showinfo=0&rel=0&modestbranding=1"
 
     return (
       <div className="w-full h-[calc(100vh-64px)] bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex flex-col">
@@ -179,7 +190,7 @@ export default function ZimMusicPage() {
               max="1"
               step="0.1"
               value={playerState.volume}
-              onChange={(e) => setPlayerState((prev) => ({ ...prev, volume: Number.parseFloat(e.target.value) }))}
+              onChange={handleVolumeChange}
               className="w-32 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer"
             />
             <span className="text-sm w-8">{Math.round(playerState.volume * 100)}</span>
@@ -335,7 +346,7 @@ export default function ZimMusicPage() {
       {songs.length > 0 && !isLoading && (
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-semibold mb-6">
-            Resultados {searchQuery && `para "${searchQuery}"`} ({songs.length} canciones)
+            Resultados {searchQuery && 'para "' + searchQuery + '"'} ({songs.length} canciones)
           </h2>
           <div className="space-y-2">
             {songs.map((song, index) => (
