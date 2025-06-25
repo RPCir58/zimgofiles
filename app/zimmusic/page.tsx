@@ -40,7 +40,6 @@ export default function ZimMusicPage() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showPlayer, setShowPlayer] = useState(false)
 
-  const audioRef = useRef<HTMLAudioElement>(null)
   const iframeRef = useRef<HTMLIFrameElement>(null)
 
   const popularSearches = [
@@ -55,7 +54,6 @@ export default function ZimMusicPage() {
   ]
 
   useEffect(() => {
-    // Load recent searches from localStorage
     const saved = localStorage.getItem("zimmusic_recent_searches")
     if (saved) {
       setRecentSearches(JSON.parse(saved))
@@ -68,7 +66,6 @@ export default function ZimMusicPage() {
     setIsLoading(true)
     setSearchPerformed(true)
 
-    // Add to recent searches
     const newRecentSearches = [query, ...recentSearches.filter((s) => s !== query)].slice(0, 5)
     setRecentSearches(newRecentSearches)
     localStorage.setItem("zimmusic_recent_searches", JSON.stringify(newRecentSearches))
@@ -145,9 +142,10 @@ export default function ZimMusicPage() {
   }
 
   if (showPlayer && playerState.currentSong) {
+    const embedUrl = `https://www.youtube.com/embed/${playerState.currentSong.id}?autoplay=${playerState.isPlaying ? 1 : 0}&controls=0&showinfo=0&rel=0&modestbranding=1`
+
     return (
       <div className="w-full h-[calc(100vh-64px)] bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex flex-col">
-        {/* Player Header */}
         <div className="bg-black bg-opacity-30 p-4 flex items-center justify-between">
           <button
             onClick={() => setShowPlayer(false)}
@@ -159,9 +157,7 @@ export default function ZimMusicPage() {
           <div className="text-white text-sm">ZimMusic</div>
         </div>
 
-        {/* Main Player */}
         <div className="flex-1 flex flex-col items-center justify-center p-8">
-          {/* Album Art - Smaller */}
           <div className="mb-6">
             <img
               src={playerState.currentSong.thumbnail || "/placeholder.svg"}
@@ -170,13 +166,11 @@ export default function ZimMusicPage() {
             />
           </div>
 
-          {/* Song Info - More Compact */}
           <div className="text-center mb-4">
             <h1 className="text-2xl font-bold text-white mb-1 max-w-md truncate">{playerState.currentSong.title}</h1>
             <p className="text-lg text-gray-300 max-w-md truncate">{playerState.currentSong.artist}</p>
           </div>
 
-          {/* Volume Control - Below Title */}
           <div className="flex items-center gap-3 text-white mb-6">
             <Volume2 size={18} />
             <input
@@ -191,7 +185,6 @@ export default function ZimMusicPage() {
             <span className="text-sm w-8">{Math.round(playerState.volume * 100)}</span>
           </div>
 
-          {/* Player Controls */}
           <div className="flex items-center gap-6 mb-6">
             <button className="text-white hover:text-purple-300 transition-colors">
               <Shuffle size={22} />
@@ -221,7 +214,6 @@ export default function ZimMusicPage() {
             </button>
           </div>
 
-          {/* Track Info */}
           <div className="text-center text-gray-300 text-sm">
             <p>
               Pista {currentIndex + 1} de {playlist.length}
@@ -229,11 +221,10 @@ export default function ZimMusicPage() {
           </div>
         </div>
 
-        {/* YouTube Player - Hidden but functional */}
         <div className="absolute -top-full -left-full w-1 h-1 overflow-hidden">
           <iframe
             ref={iframeRef}
-            src={`https://www.youtube.com/embed/${playerState.currentSong.id}?autoplay=${playerState.isPlaying ? 1 : 0}&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1`}
+            src={embedUrl}
             title={playerState.currentSong.title}
             className="w-full h-full"
             frameBorder="0"
@@ -257,7 +248,6 @@ export default function ZimMusicPage() {
         </p>
       </div>
 
-      {/* Search Section */}
       <div className="max-w-4xl mx-auto mb-8">
         <div className="bg-white border border-gray-200 rounded-lg p-6">
           <h2 className="text-2xl font-semibold mb-4">Buscar Música</h2>
@@ -286,7 +276,6 @@ export default function ZimMusicPage() {
             </button>
           </form>
 
-          {/* Popular and Recent Searches */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h3 className="text-lg font-semibold mb-3">Géneros populares</h3>
@@ -334,7 +323,6 @@ export default function ZimMusicPage() {
         </div>
       </div>
 
-      {/* Loading State */}
       {isLoading && (
         <div className="flex items-center justify-center py-12">
           <div className="flex flex-col items-center">
@@ -344,7 +332,6 @@ export default function ZimMusicPage() {
         </div>
       )}
 
-      {/* Music Results */}
       {songs.length > 0 && !isLoading && (
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-semibold mb-6">
@@ -386,7 +373,6 @@ export default function ZimMusicPage() {
         </div>
       )}
 
-      {/* No Results */}
       {songs.length === 0 && !isLoading && searchPerformed && (
         <div className="text-center py-12">
           <div className="text-gray-400 mb-4">
@@ -397,7 +383,6 @@ export default function ZimMusicPage() {
         </div>
       )}
 
-      {/* Initial State */}
       {!searchPerformed && !isLoading && (
         <div className="text-center py-12">
           <div className="text-gray-400 mb-4">

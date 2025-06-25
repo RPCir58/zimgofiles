@@ -10,30 +10,23 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    // Using YouTube Data API v3 with music-specific search
     const API_KEY = "AIzaSyCP4A8UIcZiqSlSkZvdLTvWyJvk-dgT9nk"
+    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&videoCategoryId=10&q=${encodeURIComponent(query + " music")}&maxResults=${maxResults}&key=${API_KEY}`
 
-    const response = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&videoCategoryId=10&q=${encodeURIComponent(
-        query + " music",
-      )}&maxResults=${maxResults}&key=${API_KEY}`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
+    const response = await fetch(searchUrl, {
+      headers: {
+        "Content-Type": "application/json",
       },
-    )
+    })
 
     if (!response.ok) {
       console.error("YouTube API error:", response.status, response.statusText)
-      // Fallback to mock data if API fails
       const mockData = generateMockMusicResults(query)
       return NextResponse.json(mockData)
     }
 
     const data = await response.json()
 
-    // Transform the YouTube API response to our format
     const songs =
       data.items?.map((item: any) => ({
         id: item.id.videoId,
@@ -48,62 +41,56 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ songs, total: data.pageInfo?.totalResults || 0 })
   } catch (error) {
     console.error("YouTube Music API error:", error)
-
-    // Fallback to mock data
     const mockData = generateMockMusicResults(query)
     return NextResponse.json(mockData)
   }
 }
 
 function cleanMusicTitle(title: string): string {
-  // Remove common music video suffixes and prefixes
-  return title
-    .replace(/\s*$$Official\s*(Music\s*)?Video$$/gi, "")
-    .replace(/\s*$$Official\s*Audio$$/gi, "")
-    .replace(/\s*$$Lyric\s*Video$$/gi, "")
-    .replace(/\s*$$Lyrics$$/gi, "")
-    .replace(/\s*\[Official\s*(Music\s*)?Video\]/gi, "")
-    .replace(/\s*\[Official\s*Audio\]/gi, "")
-    .replace(/\s*\[Lyric\s*Video\]/gi, "")
-    .replace(/\s*\[Lyrics\]/gi, "")
-    .replace(/\s*-\s*Official\s*(Music\s*)?Video$/gi, "")
-    .replace(/\s*-\s*Official\s*Audio$/gi, "")
-    .replace(/\s*-\s*Lyric\s*Video$/gi, "")
-    .replace(/\s*Official\s*(Music\s*)?Video$/gi, "")
-    .replace(/\s*Official\s*Audio$/gi, "")
-    .replace(/\s*Lyric\s*Video$/gi, "")
-    .replace(/\s*Video\s*Oficial$/gi, "")
-    .replace(/\s*Audio\s*Oficial$/gi, "")
-    .replace(/\s*Vídeo\s*Oficial$/gi, "")
-    .replace(/\s*$$Video\s*Oficial$$/gi, "")
-    .replace(/\s*$$Audio\s*Oficial$$/gi, "")
-    .replace(/\s*$$Vídeo\s*Oficial$$/gi, "")
-    .replace(/\s*\[Video\s*Oficial\]/gi, "")
-    .replace(/\s*\[Audio\s*Oficial\]/gi, "")
-    .replace(/\s*\[Vídeo\s*Oficial\]/gi, "")
-    .replace(/\s*HD$/gi, "")
-    .replace(/\s*4K$/gi, "")
-    .replace(/\s*$$HD$$/gi, "")
-    .replace(/\s*$$4K$$/gi, "")
-    .replace(/\s*\[HD\]/gi, "")
-    .replace(/\s*\[4K\]/gi, "")
-    .trim()
+  let cleanTitle = title
+
+  // Remove official video tags
+  cleanTitle = cleanTitle.replace(/\s*$$Official\s*(Music\s*)?Video$$/gi, "")
+  cleanTitle = cleanTitle.replace(/\s*\[Official\s*(Music\s*)?Video\]/gi, "")
+  cleanTitle = cleanTitle.replace(/\s*Official\s*(Music\s*)?Video$/gi, "")
+
+  // Remove official audio tags
+  cleanTitle = cleanTitle.replace(/\s*$$Official\s*Audio$$/gi, "")
+  cleanTitle = cleanTitle.replace(/\s*\[Official\s*Audio\]/gi, "")
+  cleanTitle = cleanTitle.replace(/\s*Official\s*Audio$/gi, "")
+
+  // Remove lyric video tags
+  cleanTitle = cleanTitle.replace(/\s*$$Lyric\s*Video$$/gi, "")
+  cleanTitle = cleanTitle.replace(/\s*\[Lyric\s*Video\]/gi, "")
+  cleanTitle = cleanTitle.replace(/\s*Lyric\s*Video$/gi, "")
+
+  // Remove Spanish variants
+  cleanTitle = cleanTitle.replace(/\s*$$Video\s*Oficial$$/gi, "")
+  cleanTitle = cleanTitle.replace(/\s*\[Video\s*Oficial\]/gi, "")
+  cleanTitle = cleanTitle.replace(/\s*Video\s*Oficial$/gi, "")
+
+  // Remove quality tags
+  cleanTitle = cleanTitle.replace(/\s*$$HD$$/gi, "")
+  cleanTitle = cleanTitle.replace(/\s*\[HD\]/gi, "")
+  cleanTitle = cleanTitle.replace(/\s*HD$/gi, "")
+  cleanTitle = cleanTitle.replace(/\s*$$4K$$/gi, "")
+  cleanTitle = cleanTitle.replace(/\s*\[4K\]/gi, "")
+  cleanTitle = cleanTitle.replace(/\s*4K$/gi, "")
+
+  return cleanTitle.trim()
 }
 
 function extractArtist(title: string, channelTitle: string): string {
-  // Try to extract artist from title (format: "Artist - Song")
   const dashSplit = title.split(" - ")
   if (dashSplit.length >= 2) {
     return dashSplit[0].trim()
   }
 
-  // Try to extract artist from title (format: "Artist: Song")
   const colonSplit = title.split(": ")
   if (colonSplit.length >= 2) {
     return colonSplit[0].trim()
   }
 
-  // Fallback to channel title, but clean it up
   return channelTitle
     .replace(/VEVO$/gi, "")
     .replace(/Official$/gi, "")
@@ -142,7 +129,7 @@ function generateMockMusicResults(query: string) {
       thumbnail: "https://img.youtube.com/vi/JGwWNGJdvx8/mqdefault.jpg",
       channel: "Ed Sheeran",
       publishedAt: "hace 7 años",
-      description: "Ed Sheeran - Shape of You (Official Video)",
+      description: "Ed Sheeran - Shape of You",
     },
     {
       id: "YQHsXMglC9A",
@@ -151,7 +138,7 @@ function generateMockMusicResults(query: string) {
       thumbnail: "https://img.youtube.com/vi/YQHsXMglC9A/mqdefault.jpg",
       channel: "AdeleVEVO",
       publishedAt: "hace 8 años",
-      description: "Adele - Hello (Official Music Video)",
+      description: "Adele - Hello",
     },
     {
       id: "fJ9rUzIMcZQ",
@@ -160,33 +147,14 @@ function generateMockMusicResults(query: string) {
       thumbnail: "https://img.youtube.com/vi/fJ9rUzIMcZQ/mqdefault.jpg",
       channel: "Queen Official",
       publishedAt: "hace 13 años",
-      description: "Queen – Bohemian Rhapsody (Official Video Remastered)",
-    },
-    {
-      id: "9bZkp7q19f0",
-      title: "Gangnam Style",
-      artist: "PSY",
-      thumbnail: "https://img.youtube.com/vi/9bZkp7q19f0/mqdefault.jpg",
-      channel: "officialpsy",
-      publishedAt: "hace 11 años",
-      description: "PSY - GANGNAM STYLE(강남스타일) M/V",
-    },
-    {
-      id: "dQw4w9WgXcQ",
-      title: "Never Gonna Give You Up",
-      artist: "Rick Astley",
-      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
-      channel: "Rick Astley",
-      publishedAt: "hace 15 años",
-      description: "The official video for Rick Astley's Never Gonna Give You Up",
+      description: "Queen – Bohemian Rhapsody",
     },
   ]
 
-  // Filter songs that might match the query
-  const filteredSongs = mockSongs.filter(
-    (song) =>
-      song.title.toLowerCase().includes(query.toLowerCase()) || song.artist.toLowerCase().includes(query.toLowerCase()),
-  )
+  const filteredSongs = mockSongs.filter((song) => {
+    const queryLower = query.toLowerCase()
+    return song.title.toLowerCase().includes(queryLower) || song.artist.toLowerCase().includes(queryLower)
+  })
 
   return {
     songs: filteredSongs.length > 0 ? filteredSongs : mockSongs.slice(0, 4),
