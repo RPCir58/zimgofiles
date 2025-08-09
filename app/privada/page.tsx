@@ -121,12 +121,10 @@ export default function RecursosPrivadosPage() {
           <div className="divide-y divide-gray-200">
             <div className="px-6 py-4 flex justify-between items-center">
               <div>
-                <h4 className="font-medium">ZIM Roms para Delta</h4>
-                <p className="text-sm text-gray-500">ZIP - 1.49 GB</p>
+                <h4 className="font-medium">Guía avanzada de ZIMGo</h4>
+                <p className="text-sm text-gray-500">PDF - 2.5 MB</p>
               </div>
-              <button className="text-green-500 hover:text-green-600"><a href="https://www.mediafire.com/file/fn6b2xwmpoa2y8t/ZIM_Roms.zip/file" className="">
-              Descargar
-            </a></button>
+              <button className="text-green-500 hover:text-green-600">Descargar</button>
             </div>
             <div className="px-6 py-4 flex justify-between items-center">
               <div>
