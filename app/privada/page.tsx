@@ -90,12 +90,12 @@ export default function RecursosPrivadosPage() {
               <div className="p-2 rounded-full bg-green-50 mr-3">
                 <FileText className="h-6 w-6 text-green-500" />
               </div>
-              <h3 className="font-semibold text-lg">Emulador de Windows 11</h3>
+              <h3 className="font-semibold text-lg">ZIM Store</h3>
             </div>
-            <p className="text-gray-600 mb-4">Controla un ordenador de Windows 11 durante 20 minutos desde ZIMGo.</p>
+            <p className="text-gray-600 mb-4">La tienda de aplicaciones alternativa a la App Store.</p>
             <button className="text-green-500 font-medium hover:text-green-600 transition-colors">
-              <a href="/windowsremote" className="">
-              Usar Windows 11 ahora
+              <a href="https://zim-store.vercel.app/" className="">
+              Descargar ZIM Store
             </a>
             </button>
           </div>
