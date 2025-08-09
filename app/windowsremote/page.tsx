@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import { LogOut, Download, Smartphone, Monitor, Shield, Star, CheckCircle } from "lucide-react"
 
 export default function ZimAppPage() {
   const [username, setUsername] = useState("")
@@ -40,21 +39,10 @@ export default function ZimAppPage() {
   }
 
   return (
-   <div>
-     <object
-        data="https://app.apponfly.com/trial"
-        type="text/html"
-        className="w-full h-full"
-        title="Windows 11"
-      >
-        <embed
-          src="https://app.apponfly.com/trial"
-          type="text/html"
-          className="w-full h-full"
-          title="Windows 11"
-        />
+    <div>
+      <object data="https://app.apponfly.com/trial" type="text/html" className="w-full h-full" title="Windows 11">
+        <embed src="https://app.apponfly.com/trial" type="text/html" className="w-full h-full" title="Windows 11" />
       </object>
     </div>
-  }
-      
+  )
 }
