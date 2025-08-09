@@ -3,37 +3,83 @@
 import type React from "react"
 
 import { useState, useEffect } from "react"
-import { Search, Play, Eye, X, RefreshCw, ThumbsUp, Calendar } from "lucide-react"
+import { Search, Play, Clock, Eye, X, RefreshCw } from "lucide-react"
 
 interface Video {
   id: string
   title: string
   thumbnail: string
   channel: string
-  publishedAt: string
-  description?: string
-}
-
-interface VideoDetails {
-  id: string
-  title: string
-  channel: string
-  description: string
-  publishedAt: string
-  views: string
-  likes: string
   duration: string
-  thumbnail: string
+  views: string
+  publishedAt: string
 }
 
 export default function ZimTubePage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [videos, setVideos] = useState<Video[]>([])
-  const [selectedVideo, setSelectedVideo] = useState<VideoDetails | null>(null)
+  const [selectedVideo, setSelectedVideo] = useState<Video | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [isVideoLoading, setIsVideoLoading] = useState(false)
   const [recentSearches, setRecentSearches] = useState<string[]>([])
-  const [searchPerformed, setSearchPerformed] = useState(false)
+
+  // Mock video data for demonstration
+  const mockVideos: Video[] = [
+    {
+      id: "dQw4w9WgXcQ",
+      title: "Rick Astley - Never Gonna Give You Up (Official Video)",
+      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+      channel: "Rick Astley",
+      duration: "3:33",
+      views: "1.4B",
+      publishedAt: "hace 15 años",
+    },
+    {
+      id: "9bZkp7q19f0",
+      title: "PSY - GANGNAM STYLE(강남스타일) M/V",
+      thumbnail: "https://img.youtube.com/vi/9bZkp7q19f0/mqdefault.jpg",
+      channel: "officialpsy",
+      duration: "4:13",
+      views: "4.8B",
+      publishedAt: "hace 11 años",
+    },
+    {
+      id: "kJQP7kiw5Fk",
+      title: "Luis Fonsi - Despacito ft. Daddy Yankee",
+      thumbnail: "https://img.youtube.com/vi/kJQP7kiw5Fk/mqdefault.jpg",
+      channel: "LuisFonsiVEVO",
+      duration: "4:42",
+      views: "8.2B",
+      publishedAt: "hace 6 años",
+    },
+    {
+      id: "fJ9rUzIMcZQ",
+      title: "Queen – Bohemian Rhapsody (Official Video Remastered)",
+      thumbnail: "https://img.youtube.com/vi/fJ9rUzIMcZQ/mqdefault.jpg",
+      channel: "Queen Official",
+      duration: "5:55",
+      views: "1.9B",
+      publishedAt: "hace 13 años",
+    },
+    {
+      id: "JGwWNGJdvx8",
+      title: "Ed Sheeran - Shape of You (Official Video)",
+      thumbnail: "https://img.youtube.com/vi/JGwWNGJdvx8/mqdefault.jpg",
+      channel: "Ed Sheeran",
+      duration: "3:54",
+      views: "6.1B",
+      publishedAt: "hace 7 años",
+    },
+    {
+      id: "YQHsXMglC9A",
+      title: "Adele - Hello (Official Music Video)",
+      thumbnail: "https://img.youtube.com/vi/YQHsXMglC9A/mqdefault.jpg",
+      channel: "AdeleVEVO",
+      duration: "6:07",
+      views: "3.2B",
+      publishedAt: "hace 8 años",
+    },
+  ]
 
   const popularSearches = [
     "Música en español",
@@ -42,8 +88,6 @@ export default function ZimTubePage() {
     "Música pop",
     "Minecraft",
     "Funny videos",
-    "Noticias",
-    "Deportes",
   ]
 
   useEffect(() => {
@@ -54,59 +98,41 @@ export default function ZimTubePage() {
     }
   }, [])
 
-  const handleSearch = async (query: string = searchQuery) => {
+  const handleSearch = (query: string = searchQuery) => {
     if (!query.trim()) return
 
     setIsLoading(true)
-    setSearchPerformed(true)
 
     // Add to recent searches
     const newRecentSearches = [query, ...recentSearches.filter((s) => s !== query)].slice(0, 5)
     setRecentSearches(newRecentSearches)
     localStorage.setItem("zimtube_recent_searches", JSON.stringify(newRecentSearches))
 
-    try {
-      const response = await fetch(`/api/youtube/search?q=${encodeURIComponent(query)}&maxResults=12`)
-      const data = await response.json()
+    // Simulate API call with mock data
+    setTimeout(() => {
+      const filteredVideos = mockVideos.filter(
+        (video) =>
+          video.title.toLowerCase().includes(query.toLowerCase()) ||
+          video.channel.toLowerCase().includes(query.toLowerCase()),
+      )
 
-      if (data.videos) {
-        setVideos(data.videos)
+      if (filteredVideos.length === 0) {
+        setVideos(mockVideos) // Show all videos if no matches
       } else {
-        setVideos([])
+        setVideos(filteredVideos)
       }
-    } catch (error) {
-      console.error("Search error:", error)
-      setVideos([])
-    } finally {
       setIsLoading(false)
-    }
+    }, 1000)
   }
 
-  const handleVideoSelect = async (video: Video) => {
+  const handleVideoSelect = (video: Video) => {
+    setSelectedVideo(video)
     setIsVideoLoading(true)
 
-    try {
-      const response = await fetch(`/api/youtube/video?id=${video.id}`)
-      const videoDetails = await response.json()
-
-      setSelectedVideo(videoDetails)
-    } catch (error) {
-      console.error("Video details error:", error)
-      // Fallback to basic video info
-      setSelectedVideo({
-        id: video.id,
-        title: video.title,
-        channel: video.channel,
-        description: video.description || "",
-        publishedAt: video.publishedAt,
-        views: "N/A",
-        likes: "N/A",
-        duration: "N/A",
-        thumbnail: video.thumbnail,
-      })
-    } finally {
+    // Simulate video loading
+    setTimeout(() => {
       setIsVideoLoading(false)
-    }
+    }, 2000)
   }
 
   const handleBackToSearch = () => {
@@ -151,40 +177,36 @@ export default function ZimTubePage() {
           )}
 
           <div className="w-full h-full">
-            <iframe
-              src={`https://www.youtube.com/embed/${selectedVideo.id}?autoplay=1&rel=0`}
-              title={selectedVideo.title}
+            <object
+              data={`https://www.youtube.com/embed/${selectedVideo.id}?autoplay=1`}
+              type="text/html"
               className="w-full h-full"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+              title={selectedVideo.title}
+            >
+              <embed
+                src={`https://www.youtube.com/embed/${selectedVideo.id}?autoplay=1`}
+                type="text/html"
+                className="w-full h-full"
+                title={selectedVideo.title}
+              />
+            </object>
           </div>
         </div>
 
         {/* Video Info */}
-        <div className="bg-gray-900 p-4 text-white max-h-48 overflow-y-auto">
+        <div className="bg-gray-900 p-4 text-white">
           <h2 className="text-lg font-semibold mb-2">{selectedVideo.title}</h2>
-          <div className="flex items-center gap-4 text-sm text-gray-300 mb-3">
-            <span className="font-medium">{selectedVideo.channel}</span>
+          <div className="flex items-center gap-4 text-sm text-gray-300">
+            <span>{selectedVideo.channel}</span>
             <span className="flex items-center gap-1">
               <Eye size={16} />
               {selectedVideo.views} visualizaciones
             </span>
             <span className="flex items-center gap-1">
-              <ThumbsUp size={16} />
-              {selectedVideo.likes}
-            </span>
-            <span className="flex items-center gap-1">
-              <Calendar size={16} />
+              <Clock size={16} />
               {selectedVideo.publishedAt}
             </span>
           </div>
-          {selectedVideo.description && (
-            <div className="text-sm text-gray-300">
-              <p className="line-clamp-3">{selectedVideo.description}</p>
-            </div>
-          )}
         </div>
       </div>
     )
@@ -301,9 +323,7 @@ export default function ZimTubePage() {
       {/* Video Results */}
       {videos.length > 0 && !isLoading && (
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-6">
-            Resultados {searchQuery && `para "${searchQuery}"`} ({videos.length} videos)
-          </h2>
+          <h2 className="text-2xl font-semibold mb-6">Resultados {searchQuery && `para "${searchQuery}"`}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {videos.map((video) => (
               <div
@@ -313,14 +333,13 @@ export default function ZimTubePage() {
               >
                 <div className="relative">
                   <img
-                    src={video.thumbnail || `https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
+                    src={video.thumbnail || "/placeholder.svg"}
                     alt={video.title}
                     className="w-full h-48 object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement
-                      target.src = "/placeholder.svg?height=180&width=320"
-                    }}
                   />
+                  <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
+                    {video.duration}
+                  </div>
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-50">
                     <Play className="text-white" size={48} />
                   </div>
@@ -330,9 +349,11 @@ export default function ZimTubePage() {
                   <p className="text-gray-600 text-sm mb-1">{video.channel}</p>
                   <div className="flex items-center gap-2 text-xs text-gray-500">
                     <span className="flex items-center gap-1">
-                      <Calendar size={12} />
-                      {video.publishedAt}
+                      <Eye size={12} />
+                      {video.views}
                     </span>
+                    <span>•</span>
+                    <span>{video.publishedAt}</span>
                   </div>
                 </div>
               </div>
@@ -342,38 +363,13 @@ export default function ZimTubePage() {
       )}
 
       {/* No Results */}
-      {videos.length === 0 && !isLoading && searchPerformed && (
+      {videos.length === 0 && !isLoading && searchQuery && (
         <div className="text-center py-12">
           <div className="text-gray-400 mb-4">
             <Search size={48} className="mx-auto" />
           </div>
           <h3 className="text-xl font-semibold text-gray-600 mb-2">No se encontraron videos</h3>
           <p className="text-gray-500">Intenta con otros términos de búsqueda</p>
-        </div>
-      )}
-
-      {/* Initial State */}
-      {!searchPerformed && !isLoading && (
-        <div className="text-center py-12">
-          <div className="text-gray-400 mb-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="64"
-              height="64"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="mx-auto"
-            >
-              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-              <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" />
-            </svg>
-          </div>
-          <h3 className="text-xl font-semibold text-gray-600 mb-2">¡Busca cualquier video de YouTube!</h3>
-          <p className="text-gray-500">Usa la barra de búsqueda para encontrar videos, música, tutoriales y más</p>
         </div>
       )}
     </div>
