@@ -140,7 +140,7 @@ export default function ZimTubePage() {
         </div>
 
         {/* Video Player */}
-        <div className="flex-1 relative bg-black">
+        <div className="flex-1 relative">
           {isVideoLoading && (
             <div className="absolute inset-0 bg-black flex items-center justify-center z-10">
               <div className="flex flex-col items-center text-white">
@@ -150,22 +150,22 @@ export default function ZimTubePage() {
             </div>
           )}
 
-          <div className="w-full h-full flex items-center justify-center">
+          <div className="w-full h-full">
             <iframe
-              src={`https://www.youtube.com/embed/${selectedVideo.id}?autoplay=1&rel=0&showinfo=0&modestbranding=1&fs=1`}
+              src={`https://www.youtube.com/embed/${selectedVideo.id}?autoplay=1&rel=0`}
               title={selectedVideo.title}
               className="w-full h-full"
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
           </div>
         </div>
 
         {/* Video Info */}
-        <div className="bg-gray-900 p-6 text-white max-h-[30%] overflow-y-auto">
-          <h2 className="text-xl font-semibold mb-3">{selectedVideo.title}</h2>
-          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-300 mb-4">
+        <div className="bg-gray-900 p-4 text-white max-h-48 overflow-y-auto">
+          <h2 className="text-lg font-semibold mb-2">{selectedVideo.title}</h2>
+          <div className="flex items-center gap-4 text-sm text-gray-300 mb-3">
             <span className="font-medium">{selectedVideo.channel}</span>
             <span className="flex items-center gap-1">
               <Eye size={16} />
