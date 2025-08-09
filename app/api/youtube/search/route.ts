@@ -10,8 +10,8 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    // Using YouTube Data API v3 with your API key
-    const API_KEY = "AIzaSyCP4A8UIcZiqSlSkZvdLTvWyJvk-dgT9nk"
+    // Using YouTube Data API v3
+    const API_KEY = process.env.YOUTUBE_API_KEY || "AIzaSyDummy_Key_Replace_With_Real_One"
 
     const response = await fetch(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${encodeURIComponent(
@@ -25,7 +25,6 @@ export async function GET(request: NextRequest) {
     )
 
     if (!response.ok) {
-      console.error("YouTube API error:", response.status, response.statusText)
       // Fallback to mock data if API fails
       const mockData = generateMockResults(query)
       return NextResponse.json(mockData)

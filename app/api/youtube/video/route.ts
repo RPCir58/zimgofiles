@@ -9,8 +9,7 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    // Using YouTube Data API v3 with your API key
-    const API_KEY = "AIzaSyCP4A8UIcZiqSlSkZvdLTvWyJvk-dgT9nk"
+    const API_KEY = process.env.YOUTUBE_API_KEY || "AIzaSyDummy_Key_Replace_With_Real_One"
 
     const response = await fetch(
       `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&id=${videoId}&key=${API_KEY}`,
@@ -22,7 +21,6 @@ export async function GET(request: NextRequest) {
     )
 
     if (!response.ok) {
-      console.error("YouTube API error:", response.status, response.statusText)
       // Fallback to mock data
       return NextResponse.json(generateMockVideoData(videoId))
     }
@@ -41,7 +39,7 @@ export async function GET(request: NextRequest) {
       description: video.snippet.description,
       publishedAt: formatDate(video.snippet.publishedAt),
       views: formatViews(video.statistics.viewCount),
-      likes: formatViews(video.statistics.likeCount || "0"),
+      likes: formatViews(video.statistics.likeCount),
       duration: formatDuration(video.contentDetails.duration),
       thumbnail: video.snippet.thumbnails.maxres?.url || video.snippet.thumbnails.high.url,
     }
