@@ -5,7 +5,7 @@ export default function AboutPage() {
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-4xl mx-auto prose">
         <p>
-          LiveConnect 1.0
+          type:textLiveConnect 1.0
         </p>
         <p>
           Datos cargados correctamente.
