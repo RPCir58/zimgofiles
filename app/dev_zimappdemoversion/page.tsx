@@ -27,7 +27,7 @@ export default function AboutPage() {
           Está es la versión más reciente de ZIM App Demo Edition:
         </p>
         <p>
-          4.0
+          5.0
         </p>
       </div>
     </div>
