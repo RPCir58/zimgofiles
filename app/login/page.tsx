@@ -19,6 +19,11 @@ const validCredentials = [
   { username: "SoyDieguito72YT", password: "Arrozconhuevo72" },
   { username: "pepe", password: "holamundo" },
   { username: "Alvaro22", password: "Alvaro2402" },
+  { username: "Blanco.Alessandro", password: "meigoynala"},
+  { username: "loose", password: "Anton030909"},
+  { username: "mateogonzalez", password: "Password18064"},
+  { username: "YeraymCuesta", password: "Yarey1511."},
+  { username: "Viva_peru_69", password: "19237"},
 ]
 
 export default function LoginPage() {
