@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "ZIMGo Web",
-  description: "Una web creada por los desarrolladores de ZIM.",
+  description: "Una web hecha para desbloquear creada por RP_Circulo.",
   generator: "v0.dev",
 }
 

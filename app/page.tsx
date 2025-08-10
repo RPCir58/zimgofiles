@@ -19,7 +19,7 @@ export default function Home() {
             <path d="M12 2L2 19.7778H22L12 2Z" fill="#00DC82" stroke="#00DC82" />
           </svg>
         </div>
-        <h1 className="text-4xl font-bold mb-6">ZIMGo Webpage</h1>
+        <h1 className="text-4xl font-bold mb-6">ZIMGo Never Die</h1>
         <p className="mb-4">
             Únete al canal de{" "}
             <a
