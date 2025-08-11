@@ -1,5 +1,6 @@
 import { Wrench } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function ServiciosPage() {
   // Array of services with titles, descriptions and icons
@@ -139,7 +140,7 @@ export default function ServiciosPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto min-h-96 auto-rows-fr">
         {services.map((service) => (
           <div key={service.id} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
             <div className="flex items-center mb-4">
@@ -157,6 +158,21 @@ export default function ServiciosPage() {
             </Link>
           </div>
         ))}
+
+        <div className="flex flex-col justify-end items-center lg:flex hidden">
+          <Link
+            href="/pepeju3ga"
+            className="opacity-70 hover:opacity-90 transition-opacity duration-300 cursor-pointer"
+          >
+            <Image
+              src="/images/pepesaluda.png"
+              alt="Pepe easter egg - Click para jugar"
+              width={150}
+              height={150}
+              className="select-none hover:scale-110 transition-transform duration-200"
+            />
+          </Link>
+        </div>
       </div>
     </div>
   )
