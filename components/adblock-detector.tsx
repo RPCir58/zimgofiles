@@ -15,60 +15,106 @@ export default function AdblockDetector() {
   useEffect(() => {
     if (isDevPage) return
 
-    const detectAdblock = () => {
-      // Create a test element that adblock would typically hide
-      const testAd = document.createElement("div")
-      testAd.innerHTML = "&nbsp;"
-      testAd.className = "adsbox"
-      testAd.style.position = "absolute"
-      testAd.style.left = "-10000px"
-      testAd.style.width = "1px"
-      testAd.style.height = "1px"
+    const detectAdblock = async () => {
+      let detected = false
 
-      document.body.appendChild(testAd)
+      const testElements = [
+        { class: "adsbox", id: "ads" },
+        { class: "ad-banner", id: "advertisement" },
+        { class: "google-ad", id: "google_ads" },
+        { class: "adsbygoogle", id: "adsense" },
+      ]
 
-      // Check if the element is hidden (indicating adblock)
-      setTimeout(() => {
+      for (const element of testElements) {
+        const testDiv = document.createElement("div")
+        testDiv.className = element.class
+        testDiv.id = element.id
+        testDiv.innerHTML = "&nbsp;"
+        testDiv.style.position = "absolute"
+        testDiv.style.left = "-10000px"
+        testDiv.style.width = "1px"
+        testDiv.style.height = "1px"
+
+        document.body.appendChild(testDiv)
+
+        // Wait a bit for adblockers to act
+        await new Promise((resolve) => setTimeout(resolve, 200))
+
         const isBlocked =
-          testAd.offsetHeight === 0 ||
-          window.getComputedStyle(testAd).display === "none" ||
-          window.getComputedStyle(testAd).visibility === "hidden"
+          testDiv.offsetHeight === 0 ||
+          testDiv.offsetWidth === 0 ||
+          window.getComputedStyle(testDiv).display === "none" ||
+          window.getComputedStyle(testDiv).visibility === "hidden"
 
-        document.body.removeChild(testAd)
+        document.body.removeChild(testDiv)
 
         if (isBlocked) {
-          setAdblockDetected(true)
-          setShowModal(true)
+          detected = true
+          break
         }
-      }, 100)
-    }
+      }
 
-    // Alternative detection method using a fake ad request
-    const detectAdblockAlt = () => {
-      const script = document.createElement("script")
-      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      script.onerror = () => {
+      if (!detected) {
+        const adblockTests = [
+          () => typeof window.uBlock !== "undefined",
+          () => typeof window.AdBlock !== "undefined",
+          () => typeof window.adblockDetector !== "undefined",
+          () => document.querySelector('[id*="adblock"]') !== null,
+          () => document.querySelector('[class*="adblock"]') !== null,
+        ]
+
+        detected = adblockTests.some((test) => {
+          try {
+            return test()
+          } catch {
+            return false
+          }
+        })
+      }
+
+      if (!detected) {
+        const adScripts = [
+          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+          "https://www.googletagservices.com/tag/js/gpt.js",
+          "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+        ]
+
+        for (const scriptSrc of adScripts) {
+          try {
+            await new Promise((resolve, reject) => {
+              const script = document.createElement("script")
+              script.src = scriptSrc
+              script.onload = resolve
+              script.onerror = reject
+
+              document.head.appendChild(script)
+
+              // Clean up after test
+              setTimeout(() => {
+                if (document.head.contains(script)) {
+                  document.head.removeChild(script)
+                }
+              }, 1000)
+            })
+          } catch {
+            detected = true
+            break
+          }
+        }
+      }
+
+      if (detected) {
         setAdblockDetected(true)
         setShowModal(true)
       }
-      script.onload = () => {
-        // If script loads, no adblock detected
-        setAdblockDetected(false)
-      }
-
-      document.head.appendChild(script)
-
-      // Clean up
-      setTimeout(() => {
-        if (document.head.contains(script)) {
-          document.head.removeChild(script)
-        }
-      }, 3000)
     }
 
-    // Run both detection methods
-    detectAdblock()
-    detectAdblockAlt()
+    if (document.readyState === "complete") {
+      detectAdblock()
+    } else {
+      window.addEventListener("load", detectAdblock)
+      return () => window.removeEventListener("load", detectAdblock)
+    }
   }, [isDevPage, pathname])
 
   useEffect(() => {
