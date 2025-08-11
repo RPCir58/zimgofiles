@@ -107,8 +107,8 @@ export default function AdblockDetector() {
 
           {/* Additional text for better accessibility */}
           <div className="mt-4 text-gray-600 text-sm">
-            <p>Para apoyar a ZIMGo, considera desactivar tu bloqueador de anuncios.</p>
-            <p className="mt-2">¡Gracias por tu comprensión! ❤️</p>
+            <p>Haz caso a Pepe, el sí que es buena persona >:(</p>
+            <p className="mt-2">Gracias por usar ZIMGo <3</p>
           </div>
         </div>
       </div>

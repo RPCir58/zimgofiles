@@ -90,12 +90,12 @@ export default function RecursosPrivadosPage() {
               <div className="p-2 rounded-full bg-green-50 mr-3">
                 <FileText className="h-6 w-6 text-green-500" />
               </div>
-              <h3 className="font-semibold text-lg">ZIM Store</h3>
+              <h3 className="font-semibold text-lg">Lista de Dominios</h3>
             </div>
-            <p className="text-gray-600 mb-4">La tienda de aplicaciones alternativa a la App Store.</p>
+            <p className="text-gray-600 mb-4">Entérate de que dominios de ZIMGo están sin bloquear en tu colegio.</p>
             <button className="text-green-500 font-medium hover:text-green-600 transition-colors">
-              <a href="https://zim-store.vercel.app/" className="">
-              Descargar ZIM Store
+              <a href="/dominios" className="">
+              Acceder
             </a>
             </button>
           </div>
