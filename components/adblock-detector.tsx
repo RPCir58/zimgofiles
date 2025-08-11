@@ -107,8 +107,8 @@ export default function AdblockDetector() {
 
           {/* Additional text for better accessibility */}
           <div className="mt-4 text-gray-600 text-sm">
-            <p>Haz caso a Pepe, el sí que es buena persona >:(</p>
-            <p className="mt-2">Gracias por usar ZIMGo <3</p>
+            <p>Haz caso a Pepe, el sí que es buena persona &gt;:(</p>
+            <p className="mt-2">Gracias por usar ZIMGo &lt;3</p>
           </div>
         </div>
       </div>
