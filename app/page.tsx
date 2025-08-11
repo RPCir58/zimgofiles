@@ -21,26 +21,22 @@ export default function Home() {
         </div>
         <h1 className="text-4xl font-bold mb-6">ZIMGo Never Die</h1>
         <p className="mb-4">
-            Únete al canal de{" "}
-            <a
-              href="https://whatsapp.com/channel/0029VbB4Qr1J93wNd5Ni9Q34"
-              className="text-green-500 hover:text-green-600"
-            >
-              WhatsApp
-            </a>{" "}
-            y recibe todas las novedades
-          </p>
+          Únete al canal de{" "}
+          <a
+            href="https://whatsapp.com/channel/0029VbB4Qr1J93wNd5Ni9Q34"
+            className="text-green-500 hover:text-green-600"
+          >
+            WhatsApp
+          </a>{" "}
+          y recibe todas las novedades
+        </p>
         <p>
-           💚 Nuevo dominio {"->"} <a
-              href="https://zimgoforever.vercel.app/"
-              className="text-green-500 hover:text-green-600"
-            >
-              https://zimgoforever.vercel.app/
-            </a>
+          💚 Nuevo dominio {"->"}{" "}
+          <a href="https://zimgoforever.vercel.app/" className="text-green-500 hover:text-green-600">
+            https://zimgoforever.vercel.app/
+          </a>
         </p>
-        <p className="mb-4">
-            {" "}
-        </p>
+        <p className="mb-4"> </p>
         <div className="w-full max-w-3xl border border-gray-200 rounded-lg p-8 mb-12">
           <div className="flex justify-center mb-4">
             <div className="h-16 w-16 rounded-lg border border-green-200 flex items-center justify-center">
@@ -54,7 +50,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl mb-8">
           <div className="border border-gray-200 rounded-lg p-6">
             <div className="h-12 w-12 rounded-lg border border-gray-200 flex items-center justify-center mb-4">
               <Package className="h-6 w-6 text-gray-500" />
@@ -103,6 +99,15 @@ export default function Home() {
             </Link>
           </div>
         </div>
+      </div>
+
+      {/* Pepe image positioned right before footer */}
+      <div className="text-center -mb-12">
+        <img
+          src="/images/pepe.png"
+          alt="Pepe no usa Adblock ni bloquea ZIMGo - Sé como Pepe"
+          className="mx-auto max-w-lg w-full"
+        />
       </div>
     </div>
   )
