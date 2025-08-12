@@ -26,13 +26,13 @@ export default function MinecraftPage() {
       )}
 
       <object
-        data="https://www.minijuegos.com/embed/fruit-ninja"
+        data="https://html5.gamedistribution.com/a186dc9ac7f548f884db8ff54df6dd9f/?gd_sdk_referrer_url=https%3A%2F%2Fes.y8.com%2Fgames%2Ffruit_ninja_html&amp;key=y8&amp;value=default"
         type="text/html"
         className="w-full h-full"
         title="Fruit Ninja"
       >
         <embed
-          src="https://www.minijuegos.com/embed/fruit-ninja"
+          src="https://html5.gamedistribution.com/a186dc9ac7f548f884db8ff54df6dd9f/?gd_sdk_referrer_url=https%3A%2F%2Fes.y8.com%2Fgames%2Ffruit_ninja_html&amp;key=y8&amp;value=default"
           type="text/html"
           className="w-full h-full"
           title="Fruit Ninja"

@@ -20,22 +20,22 @@ export default function MinecraftPage() {
         <div className="absolute inset-0 bg-gray-900 flex items-center justify-center z-10">
           <div className="flex flex-col items-center">
             <div className="w-12 h-12 border-4 border-green-200 border-t-green-500 rounded-full animate-spin mb-4"></div>
-            <p className="text-white text-lg">Cargando Subway Surfers...</p>
+            <p className="text-white text-lg">Cargando Level Devil...</p>
           </div>
         </div>
       )}
 
       <object
-        data="https://geometrydashlite.io/subway-surfers.embed"
+        data="https://bitlifeonline.github.io/level-devil/"
         type="text/html"
         className="w-full h-full"
-        title="Subway Surfers"
+        title="Level Devil"
       >
         <embed
-          src="https://geometrydashlite.io/subway-surfers.embed"
+          src="https://bitlifeonline.github.io/level-devil/"
           type="text/html"
           className="w-full h-full"
-          title="Subway Surfers"
+          title="Level Devil"
         />
       </object>
     </div>

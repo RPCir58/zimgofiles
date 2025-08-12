@@ -21,31 +21,77 @@ export default function GamesPage() {
     },
     {
       id: 3,
-      title: "Retro",
-      description: "Juega a gran variedad de clásicos Retro desde ZIMGo.",
-      image: "https://png.pngtree.com/background/20230716/original/pngtree-d-rendering-of-retro-game-landscape-with-neon-lights-and-mountain-picture-image_4237973.jpg",
-      link: "/retro",
+      title: "Fruit Ninja",
+      description: "Corta las frutas y evita las bombas en este juego tan adictivo.",
+      image:
+        "https://www.coolmathgames.com/sites/default/files/styles/mobile_game_image/public/FruitNinja_OG-Logo.jpg.webp?itok=p9HjDBpn",
+      link: "/retro/fruit-ninja",
     },
     {
       id: 4,
-      title: "Cryzen",
-      description: "El shooter como Fortnite multijugador web con más usuarios activos.",
-      image: "/images/cryzen.jpg",
-      link: "/cryzen",
+      title: "Flappy Bird",
+      description: "Salta y evita tocar las tuberías con este gran clásico.",
+      image: "https://techfrontier.com.au/wp-content/uploads/2025/07/Remembering-Flappy-Bird.jpg",
+      link: "/retro/flappy-bird",
     },
     {
       id: 5,
       title: "Subway Surfers",
       description: "Juega a Subway Surfers desde ZIMGo.",
-      image: "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2017/03/subway-surfers.jpg?tf=3840x",
-      link: "/subway-surfers"
+      image:
+        "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2017/03/subway-surfers.jpg?tf=3840x",
+      link: "/subway-surfers",
     },
     {
       id: 6,
-      title: "Brawl Stars",
-      description: "Juega a un fan-made de Brawl Stars desde ZIMGo.",
-      image: "https://www.viaxesports.com/wp-content/uploads/2019/08/brawlstarsagosto.jpg",
-      link: "/brawl-stars"
+      title: "Agar.io",
+      description: "Comete a las bolas pequeñas y hazte cada vez más grande.",
+      image: "https://lh4.googleusercontent.com/proxy/bNZXGsuurxs7ZIBx8ELmxnrI5knk0AyZ62k2FEYq5DXRNWnwtsoCY5HaGsri5WkUI_yfL8Bg290MY7IFZakgVlJHU72uSANfr9Yb5bvgN8j9Y2Jp00A",
+      link: "/retro/agario",
+    },
+    {
+      id: 7,
+      title: "Level Devil",
+      description: "Divertido y a la vez frustrante, juego de plataformas.",
+      image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3242750/a78a03f1047a590e6b9b0360ec361924d7f98959/capsule_616x353.jpg?t=1743000677",
+      link: "/level-devil",
+    },
+    {
+      id: 8,
+      title: "Crossy Road",
+      description: "Cruza la carretera en este juego infinito de estrategia.",
+      image: "https://static1.squarespace.com/static/5cedd5e7c6e7df0001bbb67c/t/675b681dbe3e687a57ff005c/1734043683478/CrossyRoad_Banner.png?format=1500w",
+      link: "/crossy-road",
+    },
+    {
+      id: 9,
+      title: "FC 25",
+      description: "Juega a un fan-made de FC 25 en ZIMGo.",
+      image: "https://img.asmedia.epimg.net/resizer/v2/OM6D4IGPLFHZTLNP2PZVXGJY3Q.jpg?auth=37c91b6633b9bb6c9e2dc06573b562af0ac5ddae99eebd9a4e65b50ddd07d5a2&width=644&height=362&smart=true",
+      link: "/fc-25",
+    },
+    {
+      id: 10,
+      title: "Krunker.io",
+      description: "Juega a diferentes modalidades shooter como FFA, Deathmatch o Capture the Flag.",
+      image:
+        "https://imgs.crazygames.com/games/krunker-io/cover-1591336739727.png?metadata=none&quality=100&width=1200&height=630&fit=crop",
+      link: "/krunker",
+    },
+    {
+      id: 11,
+      title: "Car Racing",
+      description: "¡Esquiva a los coches en este juego de carreras dinámico!",
+      image:
+        "https://cdn1.epicgames.com/spt-assets/9a81f51cb53441daa0adb2c3bd1d46dd/mr-racer--premium-1us35.jpg?resize=1&w=480&h=270&quality=medium",
+      link: "/car-racing",
+    },
+    {
+      id: 12,
+      title: "Pronto más juegos.",
+      description: "Envíanos una sugerencia para meter un juego y te diremos si es posible.",
+      image: "",
+      link: "/servicios",
     },
   ]
 
