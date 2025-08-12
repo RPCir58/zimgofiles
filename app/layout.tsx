@@ -13,13 +13,8 @@ export const metadata: Metadata = {
   description: "Una web hecha para desbloquear creada por RP_Circulo.",
   generator: "v0.dev",
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-    other: [{ url: "/favicon.png", type: "image/svg+xml" }],
+    icon: [{ url: "/favicon.png", type: "image/svg+xml" }, { url: "/favicon.ico" }],
+    apple: [{ url: "/favicon.png", type: "image/svg+xml" }],
   },
 }
 
@@ -31,9 +26,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.png" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={inter.className}>
         <div className="flex min-h-screen flex-col">
