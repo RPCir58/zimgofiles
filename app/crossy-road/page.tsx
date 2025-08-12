@@ -26,13 +26,13 @@ export default function MinecraftPage() {
       )}
 
       <object
-        data="https://crossy-road.com/crossy-road.embed"
+        data="https://game3.glov3.me/uploads/game/html5/4072/"
         type="text/html"
         className="w-full h-full"
         title="Crossy Road"
       >
         <embed
-          src="https://crossy-road.com/crossy-road.embed"
+          src="https://game3.glov3.me/uploads/game/html5/4072/"
           type="text/html"
           className="w-full h-full"
           title="Crossy Road"
