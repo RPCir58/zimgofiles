@@ -108,6 +108,10 @@ export default function DominiosPage() {
       url: "https://zimgo.cloudfront.net/",
       description: "Dominio alternativo",
     },
+    {
+      url: "https://r74xxt.mimo.run/index.html",
+      description: "Dominio alternativo",
+    },
   ]
 
   // Generate different statuses for each college
@@ -125,6 +129,7 @@ export default function DominiosPage() {
         "bloqueado",
         "desarrollo",
         "desarrollo",
+        "bloqueado",
       ],
       Salesianos: [
         "bloqueado",
@@ -138,6 +143,7 @@ export default function DominiosPage() {
         "desconocido",
         "desarrollo",
         "desarrollo",
+        "desconocido",
       ],
       Eiris: [
         "bloqueado",
@@ -151,6 +157,7 @@ export default function DominiosPage() {
         "activo",
         "desarrollo",
         "desarrollo",
+        "desconocido",
       ],
       "Santa María del Mar": [
         "desconocido",
@@ -177,6 +184,7 @@ export default function DominiosPage() {
         "desconocido",
         "desarrollo",
         "desarrollo",
+        "desconocido",
       ],
       "Compañía de María": [
         "desconocido",
@@ -190,6 +198,7 @@ export default function DominiosPage() {
         "desconocido",
         "desarrollo",
         "desarrollo",
+        "desconocido",
       ],
     }
     return (
@@ -200,6 +209,7 @@ export default function DominiosPage() {
         "desarrollo",
         "bloqueado",
         "desarrollo",
+        "desconocido",
         "desconocido",
         "desconocido",
         "desconocido",
