@@ -88,10 +88,10 @@ export default function GamesPage() {
     },
     {
       id: 12,
-      title: "Pronto más juegos.",
-      description: "Envíanos una sugerencia para meter un juego y te diremos si es posible.",
-      image: "",
-      link: "/servicios",
+      title: "Friday Night Funkin",
+      description: "Juega a FNF de itch.io desde ZIMGo. Solo para dispositivos con teclado.",
+      image: "https://abg-static.s3.amazonaws.com/media/fridaynightfunkin-thumbnail.webp",
+      link: "/fnf",
     },
   ]
 
