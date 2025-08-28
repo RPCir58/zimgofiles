@@ -30,6 +30,7 @@ export default function Home() {
           </a>{" "}
           y recibe todas las novedades
         </p>
+        <p>Hemos actualizado nuestros términos del servicio. <a href="/legal" className="text-green-500 hover:text-green-600"><strong>Revisar</strong></a></p>
         <p className="mb-4"> </p>
         <div className="w-full max-w-3xl border border-gray-200 rounded-lg p-8 mb-12">
           <div className="flex justify-center mb-4">
