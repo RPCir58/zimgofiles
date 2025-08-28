@@ -16,7 +16,7 @@ export default function UnblockedWebPage() {
 
   const popularSites = [
     { name: "Bad Time Simulator", url: "https://badtimesimulator.io/" },
-    { name: "Google Maps", url: "https://google.com/es/maps/" },
+    { name: "Proxysite", url: "https://www.proxysite.com/es/" },
     { name: "Google Drive", url: "https://drive.google.com/" },
     { name: "Google Earth", url: "https://earth.google.com/" },
     { name: "Google", url: "https://www.google.com" },
@@ -101,7 +101,7 @@ export default function UnblockedWebPage() {
           <button
             onClick={handleRefresh}
             className={`p-1 rounded hover:bg-gray-200 ${isLoading ? "animate-spin" : ""}`}
-            aria-label="Refresh page"
+            aria-label="Reiniciar la página"
           >
             <RefreshCw size={18} />
           </button>
@@ -113,7 +113,7 @@ export default function UnblockedWebPage() {
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 className="flex-1 outline-none text-sm"
-                placeholder="Enter URL"
+                placeholder="Escribe URL"
               />
               <button type="submit" className="sr-only">
                 Go
