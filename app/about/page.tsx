@@ -26,8 +26,8 @@ export default function AboutPage() {
         <h2>¡Contáctanos!</h2>
           <p>
             ¿Tienes preguntas, sugerencias o peticiones? ¡Estamos encantados de atenderte! Envíanos un email a {" "}
-            <a href="mailto:alguien.raro.muy.extrano@gmail.com" className="text-green-500 hover:text-green-600">
-              alguien.raro.muy.extrano@gmail.com
+            <a href="mailto:zimgoteam@gmail.com" className="text-green-500 hover:text-green-600">
+              <strong>zimgoteam@gmail.com</strong>
             </a>
             .
             ¡Gracias por hacer que ZIMGo sea posible!
