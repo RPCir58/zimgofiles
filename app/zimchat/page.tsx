@@ -17,6 +17,11 @@ export default function AboutPage() {
             Servidor 2 (172.67.207.97)
           </a>
         </h2>
+        <h2>
+          <a href="/zimchat/3" className="text-green-500 hover:text-green-600">
+            Servidor 3 (172.67.196.211)
+          </a>
+        </h2>
       </div>
     </div>
   )
