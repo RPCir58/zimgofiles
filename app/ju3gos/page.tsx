@@ -73,7 +73,7 @@ export default function GamesPage() {
     {
       id: 10,
       title: "Krunker.io",
-      description: "Juega a diferentes modalidades shooter como FFA, Deathmatch o Capture the Flag.",
+      description: "Juega a diferentes modalidades shooter como FFA, Deadmatch o Capture the Flag.",
       image:
         "https://imgs.crazygames.com/games/krunker-io/cover-1591336739727.png?metadata=none&quality=100&width=1200&height=630&fit=crop",
       link: "/krunker",

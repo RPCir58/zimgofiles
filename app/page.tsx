@@ -26,7 +26,7 @@ export default function Home() {
             href="https://whatsapp.com/channel/0029VbB4Qr1J93wNd5Ni9Q34"
             className="text-green-500 hover:text-green-600"
           >
-            WhatsApp
+            <strong>WhatsApp</strong>
           </a>{" "}
           y recibe todas las novedades
         </p>
